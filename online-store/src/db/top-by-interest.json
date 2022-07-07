@@ -1,0 +1,68 @@
+{
+  "status": true,
+  "data": {
+    "title": "Top By Daily Interest",
+    "phones": [
+      {
+        "phone_name": "Xiaomi 12S Ultra",
+        "slug": "xiaomi_12s_ultra-11614",
+        "hits": 40902,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_12s_ultra-11614"
+      },
+      {
+        "phone_name": "Xiaomi 12S Pro",
+        "slug": "xiaomi_12s_pro-11651",
+        "hits": 34267,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_12s_pro-11651"
+      },
+      {
+        "phone_name": "Nothing phone (1)",
+        "slug": "nothing_phone_(1)-11636",
+        "hits": 25560,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/nothing_phone_(1)-11636"
+      },
+      {
+        "phone_name": "Samsung Galaxy S22 Ultra 5G",
+        "slug": "samsung_galaxy_s22_ultra_5g-11251",
+        "hits": 23353,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_s22_ultra_5g-11251"
+      },
+      {
+        "phone_name": "Xiaomi Poco F4",
+        "slug": "xiaomi_poco_f4-11627",
+        "hits": 21291,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_poco_f4-11627"
+      },
+      {
+        "phone_name": "Samsung Galaxy A53 5G",
+        "slug": "samsung_galaxy_a53_5g-11268",
+        "hits": 19723,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_a53_5g-11268"
+      },
+      {
+        "phone_name": "Xiaomi 12S",
+        "slug": "xiaomi_12s-11645",
+        "hits": 18498,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_12s-11645"
+      },
+      {
+        "phone_name": "Xiaomi Redmi Note 11",
+        "slug": "xiaomi_redmi_note_11-11336",
+        "hits": 18373,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_redmi_note_11-11336"
+      },
+      {
+        "phone_name": "Apple iPhone 13 Pro Max",
+        "slug": "apple_iphone_13_pro_max-11089",
+        "hits": 17854,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13_pro_max-11089"
+      },
+      {
+        "phone_name": "Samsung Galaxy A13",
+        "slug": "samsung_galaxy_a13-11402",
+        "hits": 15768,
+        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_a13-11402"
+      }
+    ]
+  }
+}
