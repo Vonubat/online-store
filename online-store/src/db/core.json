@@ -3,124 +3,244 @@
   "data": {
     "phones": [
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi Redmi Note 10 Pro",
         "slug": "xiaomi_redmi_note_10_pro-10662",
-        "hits": 1,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_redmi_note_10_pro-10662"
+        "popular": true,
+        "quantity": 14,
+        "color": "white",
+        "price": 221.0,
+        "camera": 4,
+        "year": 2003,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note10-pro-1.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi Poco F3",
         "slug": "xiaomi_poco_f3-10758",
-        "hits": 2,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_poco_f3-10758"
+        "popular": false,
+        "quantity": 3,
+        "color": "white",
+        "price": 290.0,
+        "camera": 3,
+        "year": 2018,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-poco-f3-moonlight-silver.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi Poco X3 Pro",
         "slug": "xiaomi_poco_x3_pro-10802",
-        "hits": 3,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_poco_x3_pro-10802"
+        "popular": true,
+        "quantity": 20,
+        "color": "blue",
+        "price": 260.0,
+        "camera": 4,
+        "year": 2015,
+        "detail": "https://fdn.gsmarena.com/imgroot/reviews/21/poco-x3-pro/lifestyle/-1024w2/gsmarena_003.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi Mi 11 Ultra",
         "slug": "xiaomi_mi_11_ultra-10737",
-        "hits": 4,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_mi_11_ultra-10737"
+        "popular": false,
+        "quantity": 13,
+        "color": "black",
+        "price": 869.99,
+        "camera": 3,
+        "year": 2008,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi11-ultra-5g-k1-1.jpg"
       },
       {
+        "brand": "Samsung",
         "phone_name": "Samsung Galaxy S22 Ultra 5G",
         "slug": "samsung_galaxy_s22_ultra_5g-11251",
-        "hits": 5,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_s22_ultra_5g-11251"
+        "popular": true,
+        "quantity": 1,
+        "color": "red",
+        "price": 749.99,
+        "camera": 4,
+        "year": 2007,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s22-ultra-5g-2.jpg"
       },
       {
+        "brand": "Sony",
         "phone_name": "Sony Xperia 1 III",
         "slug": "sony_xperia_1_iii-10712",
-        "hits": 6,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/sony_xperia_1_iii-10712"
+        "popular": false,
+        "quantity": 26,
+        "color": "purple",
+        "price": 819.99,
+        "camera": 4,
+        "year": 2016,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/sony/sony-xperia-1-iii-03.jpg"
       },
       {
+        "brand": "Google",
         "phone_name": "Google Pixel 6 Pro",
         "slug": "google_pixel_6_pro-10918",
-        "hits": 7,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/google_pixel_6_pro-10918"
+        "popular": false,
+        "quantity": 25,
+        "color": "black",
+        "price": 599.99,
+        "camera": 3,
+        "year": 2020,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-pro-1.jpg"
       },
       {
+        "brand": "Samsung",
         "phone_name": "Samsung Galaxy A52s 5G",
         "slug": "samsung_galaxy_a52s_5g-11039",
-        "hits": 8,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_a52s_5g-11039"
+        "popular": true,
+        "quantity": 2,
+        "color": "green",
+        "price": 286.15,
+        "camera": 4,
+        "year": 2011,
+        "detail": "https://fdn.gsmarena.com/imgroot/reviews/21/samsung-galaxy-a52s-5g/lifestyle/-1024w2/gsmarena_002.jpg"
       },
       {
+        "brand": "Apple",
         "phone_name": "Apple iPhone 13 Pro Max",
         "slug": "apple_iphone_13_pro_max-11089",
-        "hits": 9,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13_pro_max-11089"
+        "popular": true,
+        "quantity": 21,
+        "color": "blue",
+        "price": 1023.99,
+        "camera": 4,
+        "year": 2020,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-01.jpg"
       },
       {
+        "brand": "OnePlus",
         "phone_name": "OnePlus 9 Pro",
         "slug": "oneplus_9_pro-10806",
-        "hits": 10,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/oneplus_9_pro-10806"
+        "popular": false,
+        "quantity": 19,
+        "color": "green",
+        "price": 524.69,
+        "camera": 4,
+        "year": 2013,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-9-pro-1.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi 12S Ultra",
         "slug": "xiaomi_12s_ultra-11614",
-        "hits": 11,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_12s_ultra-11614"
+        "popular": false,
+        "quantity": 16,
+        "color": "black",
+        "price": 950.0,
+        "camera": 4,
+        "year": 2013,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-12s-ultra-black-1.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi 12S Pro",
         "slug": "xiaomi_12s_pro-11651",
-        "hits": 12,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_12s_pro-11651"
+        "popular": false,
+        "quantity": 22,
+        "color": "white",
+        "price": 670.0,
+        "camera": 3,
+        "year": 2022,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-12s-pro-1.jpg"
       },
       {
+        "brand": "Nothing",
         "phone_name": "Nothing phone (1)",
         "slug": "nothing_phone_(1)-11636",
-        "hits": 13,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/nothing_phone_(1)-11636"
+        "popular": false,
+        "quantity": 20,
+        "color": "white",
+        "price": 470.0,
+        "camera": 2,
+        "year": 2022,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone1-1.jpg"
       },
       {
-        "phone_name": "Samsung Galaxy S22 Ultra 5G",
-        "slug": "samsung_galaxy_s22_ultra_5g-11251",
-        "hits": 14,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_s22_ultra_5g-11251"
+        "brand": "Microsoft ",
+        "phone_name": "Lumia 950 XL Dual SIM",
+        "slug": "microsoft_lumia_950_xl_dual_sim-7631",
+        "popular": false,
+        "quantity": 1,
+        "color": "white",
+        "price": 350.0,
+        "camera": 1,
+        "year": 2009,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-lumia-950-xl-2.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi Poco F4",
         "slug": "xiaomi_poco_f4-11627",
-        "hits": 15,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_poco_f4-11627"
+        "popular": false,
+        "quantity": 30,
+        "color": "green",
+        "price": 349.0,
+        "camera": 3,
+        "year": 2020,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-poco-f4-5g-01.jpg"
       },
       {
+        "brand": "Samsung",
         "phone_name": "Samsung Galaxy A53 5G",
         "slug": "samsung_galaxy_a53_5g-11268",
-        "hits": 16,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_a53_5g-11268"
+        "popular": false,
+        "quantity": 24,
+        "color": "black",
+        "price": 304.99,
+        "camera": 4,
+        "year": 2003,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a53-5g-1.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi 12S",
         "slug": "xiaomi_12s-11645",
-        "hits": 17,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_12s-11645"
+        "popular": false,
+        "quantity": 22,
+        "color": "black",
+        "price": 570.0,
+        "camera": 3,
+        "year": 2016,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-12s-1.jpg"
       },
       {
+        "brand": "Xiaomi",
         "phone_name": "Xiaomi Redmi Note 11",
         "slug": "xiaomi_redmi_note_11-11336",
-        "hits": 18,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/xiaomi_redmi_note_11-11336"
+        "popular": false,
+        "quantity": 28,
+        "color": "blue",
+        "price": 172.99,
+        "camera": 4,
+        "year": 2012,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-11-global-1.jpg"
       },
       {
-        "phone_name": "Apple iPhone 13 Pro Max",
-        "slug": "apple_iphone_13_pro_max-11089",
-        "hits": 19,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/apple_iphone_13_pro_max-11089"
+        "brand": "Microsoft",
+        "phone_name": "Surface Duo",
+        "slug": "microsoft_surface_duo-10365",
+        "popular": true,
+        "quantity": 11,
+        "color": "white",
+        "price": 435.59,
+        "camera": 1,
+        "year": 2022,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-surface-duo-02.jpg"
       },
       {
+        "brand": "Samsung",
         "phone_name": "Samsung Galaxy A13",
         "slug": "samsung_galaxy_a13-11402",
-        "hits": 20,
-        "detail": "http://api-mobilespecs.azharimm.site/v2/samsung_galaxy_a13-11402"
+        "popular": false,
+        "quantity": 6,
+        "color": "orange",
+        "price": 139.99,
+        "camera": 4,
+        "year": 2002,
+        "detail": "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a13-1.jpg"
       }
     ]
   }
