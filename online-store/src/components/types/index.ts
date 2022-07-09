@@ -1,12 +1,16 @@
 export interface IGoods {
-  brand: string;
   phone_name: string;
-  slug: string;
+  brand: string;
+  year: number;
+  color: string;
+  camera: number;
   popular: boolean;
   quantity: number;
-  color: string;
   price: number;
-  camera: number;
-  year: number;
-  detail: string;
+  slug: string;
+}
+
+export interface IData {
+  status: boolean;
+  data: Readonly<IGoods>[];
 }

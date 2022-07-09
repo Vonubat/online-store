@@ -1,4 +1,4 @@
-import { IGoods } from '../../types/index';
+import { IData, IGoods } from './../types/index';
 
 class Loader {
   private url: string;
@@ -7,27 +7,24 @@ class Loader {
     this.url = 'db/core.json';
   }
 
-  private errorHandler(res: Response): Response {
+  private async errorHandler(res: Response): Promise<Response> {
     if (!res.ok) {
       console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-
       throw Error(res.statusText);
     }
 
     return res;
   }
 
-  load(): IGoods | void {
-    fetch(this.url)
-      .then(this.errorHandler)
-      .then((res: Response): Promise<IGoods> => res.json())
-      .then(
-        (data: IGoods): IGoods => {
-          console.log(data);
-          return data;
-        }
-      )
-      .catch((err: Error): void => console.error(err));
+  async load(): Promise<IGoods[] | void> {
+    try {
+      const response: Response = await fetch(this.url);
+      await this.errorHandler(response);
+      const result: Promise<IData> = await response.json();
+      return (await result).data;
+    } catch (error: unknown) {
+      console.error(error);
+    }
   }
 }
 
