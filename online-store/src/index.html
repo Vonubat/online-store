@@ -4,7 +4,69 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96.png" sizes="96x96" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="./assets/favicons/favicon-180.png" />
+    <title>Online store</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header container-fluid">
+      <div class="logo">
+        <h1 class="h1">Online Store</h1>
+        <img class="online-shopping" src="./assets/online-shopping.png" alt="online-shopping.png" />
+      </div>
+
+      <div class="controls">
+        <button
+          class="btn btn-primary me-3"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasWithBothOptions"
+          aria-controls="offcanvasWithBothOptions"
+        >
+          Фильтры
+        </button>
+        <button type="button" class="btn btn-primary position-relative">
+          Корзина
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 5 </span>
+        </button>
+        <div class="input-group search mb-3 mt-3">
+          <input class="form-control" type="search" placeholder="Поиск" aria-label="default input example" />
+          <button class="btn btn-primary" type="button" id="button-addon1">
+            <img src="./assets/search.png" alt="" />
+          </button>
+        </div>
+
+        <div
+          class="offcanvas offcanvas-start"
+          data-bs-scroll="true"
+          tabindex="-1"
+          id="offcanvasWithBothOptions"
+          aria-labelledby="offcanvasWithBothOptionsLabel"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <p>Try scrolling the rest of the page to see this option in action.</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="cards-container container"></section>
+    <footer class="footer container-fluid">
+      <div class="logo">
+        <a href="https://rs.school/" target="_blank">
+          <img class="rs-school-logo" src="./assets/rs-school-logo.svg" alt="rs-school-logo"
+        /></a>
+        <a href="https://github.com/Vonubat" target="_blank">
+          <img class="github-logo" src="./assets/icons-github.svg" alt="hithub-logo"
+        /></a>
+      </div>
+
+      <span class="rs-school-title">© Rolling Scopes School, 2022</span>
+    </footer>
+  </body>
 </html>
