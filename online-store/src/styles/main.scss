@@ -34,6 +34,32 @@ html {
   }
 }
 
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .card {
+    background-color: $light;
+    width: 300px;
+    text-align: center;
+
+    .card-img-top {
+      width: 200px;
+      height: 270px;
+      margin: auto;
+    }
+
+    .card-footer {
+      background-color: $green-100;
+      .btn {
+        display: block;
+        margin: auto;
+      }
+    }
+  }
+}
+
 .footer {
   height: 75px;
   background-color: $gray-800;
