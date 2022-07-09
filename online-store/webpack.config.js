@@ -50,7 +50,10 @@ const baseConfig = {
     new CleanWebpackPlugin(),
     new EslingPlugin({ extensions: 'ts' }),
     new CopyPlugin({
-      patterns: [{ from: './src/assets', to: './../dist/assets' }],
+      patterns: [
+        { from: './src/assets', to: './../dist/assets' },
+        { from: './src/db', to: './../dist/db' },
+      ],
     }),
   ],
 };
