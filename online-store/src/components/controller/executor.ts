@@ -19,21 +19,16 @@ class Executor {
       if (typeof goods === 'undefined') {
         console.error('goods is Empty');
       } else {
-        if (event instanceof KeyboardEvent) {
+        if (event instanceof KeyboardEvent || event instanceof MouseEvent) {
           const value = (event.target as HTMLInputElement).value;
-
-          this.generator.generate(this.search.search(goods.data, value));
+          goods.data = this.search.search(goods.data, value);
+          console.log(goods.data);
+          this.generator.generate(goods.data);
         }
-
-        // this.generator.generate(goods.data);
       }
     } catch (error) {
       console.error(error);
     }
-
-    // if (event instanceof KeyboardEvent) {
-    //   search(goods);
-    // }
   }
 }
 
