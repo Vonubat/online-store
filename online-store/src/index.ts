@@ -2,10 +2,10 @@ import './styles/normalize.css';
 import './styles/main.scss';
 import 'bootstrap';
 // import * as bootstrap from 'bootstrap';
-import Executor from './components/controller/executor';
+import Observer from './components/controller/observer';
 
-const executer: Executor = new Executor();
-executer.execute();
+const observer: Observer = new Observer();
+observer.observe();
 
 // test for btn
 const btn = document.getElementById('button-addon1');

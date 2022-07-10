@@ -12,11 +12,15 @@ class Executor {
   }
 
   async execute(/* event: Event */): Promise<void> {
-    const goods: void | IGoods = await this.loader.load();
-    if (typeof goods === 'undefined') {
-      console.error('goods is Empty');
-    } else {
-      this.generator.generate(goods);
+    try {
+      const goods: void | IGoods = await this.loader.load();
+      if (typeof goods === 'undefined') {
+        console.error('goods is Empty');
+      } else {
+        this.generator.generate(goods);
+      }
+    } catch (error) {
+      console.error(error);
     }
 
     // if (event instanceof KeyboardEvent) {
