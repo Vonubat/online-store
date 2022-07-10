@@ -2,10 +2,10 @@ import './styles/normalize.css';
 import './styles/main.scss';
 import 'bootstrap';
 // import * as bootstrap from 'bootstrap';
-import Generator from './components/controller/generator';
+import Executor from './components/controller/executor';
 
-const generator: Generator = new Generator();
-generator.generate();
+const executer: Executor = new Executor();
+executer.execute();
 
 // test for btn
 const btn = document.getElementById('button-addon1');

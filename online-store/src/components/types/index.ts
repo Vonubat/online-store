@@ -1,4 +1,4 @@
-export interface IGoods {
+export interface IGoodDeatails {
   phone_name: string;
   brand: string;
   year: number;
@@ -10,7 +10,8 @@ export interface IGoods {
   slug: string;
 }
 
-export interface IData {
+export interface IGoods {
   status: boolean;
-  data: Readonly<IGoods>[];
+  filters?: { [index: string]: string };
+  data: Readonly<IGoodDeatails>[];
 }

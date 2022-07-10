@@ -1,4 +1,4 @@
-import { IData, IGoods } from './../types/index';
+import { IGoods } from './../types/index';
 
 class Loader {
   private url: string;
@@ -16,12 +16,12 @@ class Loader {
     return res;
   }
 
-  async load(): Promise<IGoods[] | void> {
+  async load(): Promise<IGoods | void> {
     try {
       const response: Response = await fetch(this.url);
       await this.errorHandler(response);
-      const result: Promise<IData> = await response.json();
-      return (await result).data;
+      const result: Promise<IGoods> = await response.json();
+      return await result;
     } catch (error: unknown) {
       console.error(error);
     }
