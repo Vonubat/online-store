@@ -44,6 +44,7 @@
             <img src="./assets/search.png" alt="" />
           </button>
         </div>
+
         <div
           class="offcanvas offcanvas-start"
           data-bs-scroll="true"
@@ -81,12 +82,69 @@
             <button type="button" class="btn ms-3 me-3 btn-warning">Сброс фильтров</button>
             <button type="button" class="btn ms-4 btn-danger">Сброс настроек</button>
           </div>
+          <div class="value-filter">
+            <h5 class="offcanvas-title mt-3 mb-3">Фильтры по значению</h5>
+            <p class="text-warning bg-dark">Производитель:</p>
+            <div class="logo-brands">
+              <img class="img me-2 ms-2 mb-2" src="./assets/apple.png" alt="apple.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/samsung.png" alt="samsung.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/xiaomi.png" alt="xiaomi.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/sony.png" alt="sony.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/windows.png" alt="microsoft.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/google.png" alt="google.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/one-plus.png" alt="one-plus.png" />
+              <img class="img me-2 ms-2 mb-2" src="./assets/nothing.png" alt="nothing.png" />
+            </div>
+            <p class="text-warning bg-dark">Количество камер:</p>
+            <div class="form-check form-check-inline mb-2 ms-2">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" />
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" />
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" />
+                <label class="form-check-label" for="inlineCheckbox3">3 </label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4" />
+                <label class="form-check-label" for="inlineCheckbox4">4 </label>
+              </div>
+            </div>
 
-          <h5 class="offcanvas-title mt-3 mb-3">Фильтры по значению</h5>
-          <p>Производитель:</p>
-          <p>Количество камер:</p>
-          <p>Цвет:</p>
-          <p>Только популярные:</p>
+            <p class="text-warning bg-dark">Цвет:</p>
+            <div class="color-container">
+              <input type="checkbox" class="btn-check" id="btn-check-blue" checked autocomplete="off" />
+              <label class="btn btn-primary ms-2 me-2 mb-2" for="btn-check-blue"></label>
+              <input type="checkbox" class="btn-check" id="btn-check-black" checked autocomplete="off" />
+              <label class="btn btn-dark ms-2 me-2 mb-2" for="btn-check-black"></label>
+              <input type="checkbox" class="btn-check" id="btn-check-green" checked autocomplete="off" />
+              <label class="btn btn-success ms-2 me-2 mb-2" for="btn-check-green"></label>
+              <input type="checkbox" class="btn-check" id="btn-check-red" checked autocomplete="off" />
+              <label class="btn btn-danger ms-2 me-2 mb-2" for="btn-check-red"></label>
+              <input type="checkbox" class="btn-check" id="btn-check-white" checked autocomplete="off" />
+              <label class="btn btn-light ms-2 me-2 mb-2" for="btn-check-white"></label>
+              <input type="checkbox" class="btn-check" id="btn-check-gray" checked autocomplete="off" />
+              <label class="btn btn-secondary ms-2 me-2 mb-2" for="btn-check-gray"></label>
+            </div>
+
+            <p class="text-warning bg-dark">Только популярные:</p>
+            <div class="favorites">
+              <input type="checkbox" class="btn-check" id="btn-check-star" checked autocomplete="off" />
+              <label class="btn btn-primary ms-2 me-2 mb-2" for="btn-check-star"
+                ><img src="./assets/star.png" alt="star.png"
+              /></label>
+            </div>
+          </div>
+
+          <div class="range-filter">
+            <h5 class="offcanvas-title mt-3 mb-3">Фильтры по диапазону</h5>
+            <p class="text-warning bg-dark">Количество на складе:</p>
+            <p class="text-warning bg-dark">Год выхода на рынок:</p>
+          </div>
         </div>
       </div>
     </header>

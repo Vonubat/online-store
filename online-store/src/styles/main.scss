@@ -32,8 +32,13 @@ html {
       width: 200px;
     }
 
+    .offcanvas {
+      background-color: $gray-200;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
     .offcanvas-header {
-      background: $light;
       .logo {
         display: flex;
         align-items: center;
@@ -63,8 +68,52 @@ html {
       }
     }
 
-    .offcanvas-title {
-      text-align: center;
+    .value-filter {
+      background-color: $gray-200;
+      .offcanvas-title {
+        text-align: center;
+        font-weight: 700;
+      }
+
+      .logo-brands {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .logo-brands img:hover {
+        transition: all 0.5s;
+        transform: scale(95%);
+        opacity: 50%;
+        cursor: pointer;
+      }
+
+      .form-check-inline {
+        transform: scale(120%);
+      }
+
+      .color-container {
+        display: flex;
+        flex-wrap: wrap;
+        .btn {
+          height: 30px;
+          width: 30px;
+        }
+      }
+
+      .favorites {
+        display: flex;
+        justify-content: center;
+        .btn {
+          width: 150px;
+        }
+      }
+    }
+
+    .range-filter {
+      .offcanvas-title {
+        text-align: center;
+        font-weight: 700;
+      }
     }
   }
 }
