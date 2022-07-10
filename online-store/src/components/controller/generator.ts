@@ -2,6 +2,8 @@ import { IGoodDeatails } from './../types/index';
 
 class Generator {
   generate(data: IGoodDeatails[]): void {
+    const goods: IGoodDeatails[] = data;
+
     const sectionCardsContainer = document.getElementById('cards-container') as HTMLElement;
 
     if (sectionCardsContainer.childNodes.length > 0) {
@@ -9,8 +11,6 @@ class Generator {
         sectionCardsContainer.removeChild(sectionCardsContainer.firstChild);
       }
     }
-
-    const goods: IGoodDeatails[] = data;
 
     for (let i = 0; i < goods.length; i++) {
       const divCard: HTMLDivElement = document.createElement('div');
