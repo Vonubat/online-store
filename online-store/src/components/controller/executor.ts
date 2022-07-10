@@ -20,8 +20,9 @@ class Executor {
         console.error('goods is Empty');
       } else {
         if (event instanceof KeyboardEvent) {
-          console.log(event);
-          this.generator.generate(this.search.search(goods.data, 'Xiaomi'));
+          const value = (event.target as HTMLInputElement).value;
+
+          this.generator.generate(this.search.search(goods.data, value));
         }
 
         // this.generator.generate(goods.data);
