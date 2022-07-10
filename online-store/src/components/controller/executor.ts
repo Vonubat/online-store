@@ -22,7 +22,7 @@ class Executor {
         if (event instanceof KeyboardEvent || event instanceof MouseEvent) {
           const value = (event.target as HTMLInputElement).value;
           goods.data = this.search.search(goods.data, value);
-          console.log(goods.data);
+          // console.log(goods.data);
           this.generator.generate(goods.data);
         }
       }

@@ -31,6 +31,41 @@ html {
     .search {
       width: 200px;
     }
+
+    .offcanvas-header {
+      background: $light;
+      .logo {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        .h1 {
+          font-family: Roboto;
+          font-weight: 700;
+          font-style: italic;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .dropdown {
+      .btn {
+        width: 350px;
+      }
+      .dropdown-menu {
+        width: 350px;
+      }
+    }
+
+    .reset {
+      display: flex;
+      .btn {
+        width: 155px;
+      }
+    }
+
+    .offcanvas-title {
+      text-align: center;
+    }
   }
 }
 

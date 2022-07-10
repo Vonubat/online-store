@@ -38,6 +38,7 @@
             id="search-filter"
             placeholder="Поиск"
             aria-label="default input example"
+            autofocus
           />
           <button class="btn btn-primary disabled" type="button" id="button-addon1">
             <img src="./assets/search.png" alt="" />
@@ -51,12 +52,41 @@
           aria-labelledby="offcanvasWithBothOptionsLabel"
         >
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <div class="logo">
+              <h1 class="h1">Online Store</h1>
+              <img class="online-shopping" src="./assets/online-shopping.png" alt="online-shopping.png" />
+            </div>
+            <button type="button " class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body">
-            <p>Try scrolling the rest of the page to see this option in action.</p>
+          <div class="dropdown">
+            <button
+              class="btn btn-primary dropdown-toggle ms-3 mb-5"
+              type="button"
+              id="dropdownMenuButton1"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Сортировка
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="#">По названию, от А до Я</a></li>
+              <li><a class="dropdown-item" href="#">По названию, от Я до А</a></li>
+              <li><a class="dropdown-item" href="#">По году, по возрастанию</a></li>
+              <li><a class="dropdown-item" href="#">По году, по убыванию</a></li>
+              <li><a class="dropdown-item" href="#">По количеству, по возрастанию</a></li>
+              <li><a class="dropdown-item" href="#">По количеству, по убыванию</a></li>
+            </ul>
           </div>
+          <div class="reset">
+            <button type="button" class="btn ms-3 me-3 btn-warning">Сброс фильтров</button>
+            <button type="button" class="btn ms-4 btn-danger">Сброс настроек</button>
+          </div>
+
+          <h5 class="offcanvas-title mt-3 mb-3">Фильтры по значению</h5>
+          <p>Производитель:</p>
+          <p>Количество камер:</p>
+          <p>Цвет:</p>
+          <p>Только популярные:</p>
         </div>
       </div>
     </header>
