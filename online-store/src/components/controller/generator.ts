@@ -1,14 +1,21 @@
-import { IGoods, IGoodDeatails } from './../types/index';
+import { IGoodDeatails } from './../types/index';
 
 class Generator {
-  generate(data: IGoods): void {
-    const cardsContainer = document.getElementById('cards-container') as HTMLElement;
+  generate(data: IGoodDeatails[]): void {
+    const sectionCardsContainer = document.getElementById('cards-container') as HTMLElement;
 
-    const goods: IGoodDeatails[] = data.data;
+    if (sectionCardsContainer.childNodes.length > 0) {
+      while (sectionCardsContainer.firstChild) {
+        sectionCardsContainer.removeChild(sectionCardsContainer.firstChild);
+      }
+    }
+
+    const goods: IGoodDeatails[] = data;
+
     for (let i = 0; i < goods.length; i++) {
       const divCard: HTMLDivElement = document.createElement('div');
       divCard.classList.add('card', 'me-3', 'mt-3', 'mb-3');
-      cardsContainer?.append(divCard);
+      sectionCardsContainer.append(divCard);
 
       const imgCard: HTMLImageElement = document.createElement('img');
       imgCard.classList.add('card-img-top', 'mt-1');

@@ -4,11 +4,11 @@ class Observer extends Executor {
   searchInput: HTMLInputElement;
   constructor() {
     super();
-    this.searchInput = document.querySelector('#search-filter') as HTMLInputElement;
+    this.searchInput = document.getElementById('search-filter') as HTMLInputElement;
   }
 
   observe(): void {
-    this.searchInput.addEventListener('keyup', this.execute.bind(this, this.loader));
+    this.searchInput.addEventListener('keyup', this.execute.bind(this));
   }
 }
 

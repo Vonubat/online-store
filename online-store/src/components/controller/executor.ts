@@ -17,7 +17,7 @@ class Executor {
       if (typeof goods === 'undefined') {
         console.error('goods is Empty');
       } else {
-        this.generator.generate(goods);
+        this.generator.generate(goods.data);
       }
     } catch (error) {
       console.error(error);
