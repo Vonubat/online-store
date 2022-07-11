@@ -2,8 +2,8 @@ import { IGoodDeatails } from '../types/index';
 
 export class Search {
   search(data: IGoodDeatails[], value: string): IGoodDeatails[] {
-    return data.filter((item: IGoodDeatails) => {
-      const ItemValue = item.phone_name.toLowerCase();
+    return data.filter((item: IGoodDeatails): IGoodDeatails | undefined => {
+      const ItemValue: string = item.phone_name.toLowerCase();
       const searchValue = new RegExp(`${value.toLowerCase()}`);
       if (ItemValue.match(searchValue)) {
         return item;

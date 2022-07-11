@@ -6,7 +6,3 @@ import Observer from './components/controller/observer';
 
 const observer: Observer = new Observer();
 observer.observeSearch();
-
-// test for btn
-const btn = document.getElementById('button-addon1');
-btn?.addEventListener('mouseleave', btn.blur);
