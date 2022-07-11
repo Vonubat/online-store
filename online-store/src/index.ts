@@ -6,3 +6,4 @@ import Observer from './components/controller/observer';
 
 const observer: Observer = new Observer();
 observer.observeSearch();
+observer.observeColor();

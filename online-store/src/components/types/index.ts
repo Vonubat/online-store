@@ -15,3 +15,5 @@ export interface IGoods {
   filters?: { [index: string]: string };
   data: Readonly<IGoodDeatails>[];
 }
+
+export type ColorValue = 'blue' | 'black' | 'green' | 'red' | 'white' | 'gray';
