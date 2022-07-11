@@ -16,12 +16,16 @@ class Loader {
     return res;
   }
 
-  async load(): Promise<IGoods | void> {
+  async load(): Promise<void | IGoods> {
     try {
       const response: Response = await fetch(this.url);
       await this.errorHandler(response);
       const result: Promise<IGoods> = await response.json();
-      return await result;
+      if (typeof result === 'undefined') {
+        console.error('goods is Empty');
+      } else {
+        return result;
+      }
     } catch (error: unknown) {
       console.error(error);
     }

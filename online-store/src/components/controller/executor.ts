@@ -1,4 +1,4 @@
-import { IGoods } from '../types/index';
+import { IGoods, IGoodDeatails } from '../types/index';
 import Search from '../utilities/search-filter';
 import Generator from './generator';
 import Loader from './loader';
@@ -13,22 +13,21 @@ class Executor {
     this.search = new Search();
   }
 
-  async execute(event: Event): Promise<void> {
-    try {
-      const goods: void | IGoods = await this.loader.load();
-      if (typeof goods === 'undefined') {
-        console.error('goods is Empty');
-      } else {
-        if (event instanceof KeyboardEvent || event instanceof MouseEvent) {
-          const value = (event.target as HTMLInputElement).value;
-          goods.data = this.search.search(goods.data, value);
-          // console.log(goods.data);
-          this.generator.generate(goods.data);
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  executeGenerate(data: IGoodDeatails[]): void {
+    this.generator.generate(data);
+  }
+
+  async executeLoad(): Promise<IGoodDeatails[]> {
+    const goods: IGoods = (await this.loader.load()) as IGoods;
+    console.log(goods);
+    return goods.data;
+  }
+
+  async executeSearch(event: Event): Promise<void> {
+    const searchValue: string = (event.target as HTMLInputElement).value;
+    const filteredResult: IGoodDeatails[] = this.search.search(await this.executeLoad(), searchValue);
+
+    this.executeGenerate(filteredResult); // for test
   }
 }
 

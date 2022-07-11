@@ -7,9 +7,9 @@ class Observer extends Executor {
     this.searchInput = document.getElementById('search-filter') as HTMLInputElement;
   }
 
-  observe(): void {
-    this.searchInput.addEventListener('keydown', this.execute.bind(this));
-    this.searchInput.addEventListener('click', this.execute.bind(this));
+  observeSearch(): void {
+    this.searchInput.addEventListener('keydown', this.executeSearch.bind(this));
+    this.searchInput.addEventListener('click', this.executeSearch.bind(this));
   }
 }
 
