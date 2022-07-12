@@ -40,5 +40,10 @@ class Observer extends Executor {
   observePopular(): void {
     this.popular.popular.addEventListener('click', this.executeAll.bind(this));
   }
+
+  observeResetLocalStorage(): void {
+    this.resetLocalSorage.resetLocalStorage.addEventListener('click', this.executeResetLocalStorage.bind(this));
+  }
 }
+
 export default Observer;

@@ -15,6 +15,7 @@ import Color from '../utilities/color-filter';
 import Camera from '../utilities/camera-filter';
 import Brand from '../utilities/brand-filter';
 import { Popular } from '../utilities/popular-filter';
+import ResetLocalStorage from '../utilities/reset-local-storage';
 
 class Executor {
   generator: Generator;
@@ -24,6 +25,7 @@ class Executor {
   camera: Camera;
   brand: Brand;
   popular: Popular;
+  resetLocalSorage: ResetLocalStorage;
   constructor() {
     this.generator = new Generator();
     this.loader = new Loader();
@@ -32,6 +34,7 @@ class Executor {
     this.camera = new Camera();
     this.brand = new Brand();
     this.popular = new Popular();
+    this.resetLocalSorage = new ResetLocalStorage();
   }
 
   async executeAll(event: Event): Promise<void> {
@@ -175,6 +178,11 @@ class Executor {
 
   async executePopular(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.popular.favorites(event, data);
+  }
+
+  executeResetLocalStorage(event: Event): void {
+    this.resetLocalSorage.reset();
+    this.executeAll(event);
   }
 }
 

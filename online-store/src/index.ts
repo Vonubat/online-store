@@ -10,3 +10,4 @@ observer.observeColor();
 observer.observeCamera();
 observer.observeBrand();
 observer.observePopular();
+observer.observeResetLocalStorage();
