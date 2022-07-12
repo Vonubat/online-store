@@ -5,6 +5,10 @@ class Observer extends Executor {
     super();
   }
 
+  observeDOMContentLoaded(): void {
+    document.addEventListener('DOMContentLoaded', this.executeAll.bind(this));
+  }
+
   observeSearch(): void {
     this.search.searchInput.addEventListener('click', this.executeAll.bind(this));
     this.search.searchInput.addEventListener('input', this.executeAll.bind(this));
@@ -43,6 +47,15 @@ class Observer extends Executor {
 
   observeResetLocalStorage(): void {
     this.resetLocalSorage.resetLocalStorage.addEventListener('click', this.executeResetLocalStorage.bind(this));
+  }
+
+  observeSort(): void {
+    this.sort.nameAscent.addEventListener('click', this.executeAll.bind(this));
+    this.sort.nameDescent.addEventListener('click', this.executeAll.bind(this));
+    this.sort.yearAscent.addEventListener('click', this.executeAll.bind(this));
+    this.sort.yearDescent.addEventListener('click', this.executeAll.bind(this));
+    this.sort.quantityAscent.addEventListener('click', this.executeAll.bind(this));
+    this.sort.quantityDescent.addEventListener('click', this.executeAll.bind(this));
   }
 }
 

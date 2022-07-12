@@ -16,6 +16,7 @@ import Camera from '../utilities/camera-filter';
 import Brand from '../utilities/brand-filter';
 import { Popular } from '../utilities/popular-filter';
 import ResetLocalStorage from '../utilities/reset-local-storage';
+import Sort from '../utilities/sort';
 
 class Executor {
   generator: Generator;
@@ -26,6 +27,7 @@ class Executor {
   brand: Brand;
   popular: Popular;
   resetLocalSorage: ResetLocalStorage;
+  sort: Sort;
   constructor() {
     this.generator = new Generator();
     this.loader = new Loader();
@@ -35,16 +37,18 @@ class Executor {
     this.brand = new Brand();
     this.popular = new Popular();
     this.resetLocalSorage = new ResetLocalStorage();
+    this.sort = new Sort();
   }
 
   async executeAll(event: Event): Promise<void> {
     let filteredData: Promise<IGoodDeatails[]>;
     console.log(event);
 
-    filteredData = this.executeSearch(event, await this.executeLoad());
-    filteredData = this.executeColor(event, await filteredData);
-    filteredData = this.executeCamera(event, await filteredData);
+    filteredData = this.executeSort(event, await this.executeLoad());
+    filteredData = this.executeSearch(event, await filteredData);
     filteredData = this.executeBrand(event, await filteredData);
+    filteredData = this.executeCamera(event, await filteredData);
+    filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executePopular(event, await filteredData);
     this.executeGenerate(await filteredData); // for test
   }
@@ -183,6 +187,10 @@ class Executor {
   executeResetLocalStorage(event: Event): void {
     this.resetLocalSorage.reset();
     this.executeAll(event);
+  }
+
+  async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    return this.sort.sort(event, data);
   }
 }
 

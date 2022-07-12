@@ -36,3 +36,20 @@ export const allBrands: TBrandValue[] = [
   'nothing',
   'oneplus',
 ];
+
+export type TSortValue =
+  | 'name-ascent'
+  | 'name-descent'
+  | 'year-ascent'
+  | 'year-descent'
+  | 'quantity-ascent'
+  | 'quantity-descent';
+
+export const allSorts: TSortValue[] = [
+  'name-ascent',
+  'name-descent',
+  'year-ascent',
+  'year-descent',
+  'quantity-ascent',
+  'quantity-descent',
+];
