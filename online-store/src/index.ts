@@ -8,3 +8,4 @@ const observer: Observer = new Observer();
 observer.observeSearch();
 observer.observeColor();
 observer.observeCamera();
+observer.observeBrand();

@@ -1,9 +1,19 @@
-import { IGoods, IGoodDeatails, TColorValue, TCameraValue, allColors, allCameras } from '../types/index';
+import {
+  IGoods,
+  IGoodDeatails,
+  TColorValue,
+  TCameraValue,
+  allColors,
+  allCameras,
+  TBrandValue,
+  allBrands,
+} from '../types/index';
 import Generator from './generator';
 import Loader from './loader';
 import Search from '../utilities/search-filter';
 import Color from '../utilities/color-filter';
 import Camera from '../utilities/camera-filter';
+import Brand from '../utilities/brand-filter';
 
 class Executor {
   generator: Generator;
@@ -11,20 +21,24 @@ class Executor {
   search: Search;
   color: Color;
   camera: Camera;
+  brand: Brand;
   constructor() {
     this.generator = new Generator();
     this.loader = new Loader();
     this.search = new Search();
     this.color = new Color();
     this.camera = new Camera();
+    this.brand = new Brand();
   }
 
   async executeAll(event: Event): Promise<void> {
     let filteredData: Promise<IGoodDeatails[]>;
+    console.log(event);
 
     filteredData = this.executeSearch(event, await this.executeLoad());
     filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executeCamera(event, await filteredData);
+    filteredData = this.executeBrand(event, await filteredData);
     this.executeGenerate(await filteredData); // for test
   }
 
@@ -120,7 +134,37 @@ class Executor {
     // console.log(tempData);
     // console.log(localStorage);
     // console.log(cameraStorage);
-    console.log(event);
+
+    return tempData;
+  }
+
+  async executeBrand(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    let tempData: IGoodDeatails[] = data;
+
+    const brandStorage: TBrandValue[] = allBrands.filter((brand: TBrandValue): TBrandValue | undefined => {
+      if (brand.toLocaleLowerCase() === (event.target as HTMLInputElement).id) {
+        if (localStorage.getItem(brand)) {
+          localStorage.removeItem(brand);
+        } else {
+          localStorage.setItem(brand, brand);
+        }
+      }
+      if (localStorage.getItem(brand)) {
+        return brand;
+      } else return;
+    });
+
+    if (brandStorage.length === 0) {
+      this.brand.brand(data, brandStorage);
+    } else {
+      tempData = brandStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
+        return this.brand.brand(previousData, brandStorage);
+      }, data);
+    }
+
+    // console.log(tempData);
+    // console.log(localStorage);
+    // console.log(brandStorage);
 
     return tempData;
   }

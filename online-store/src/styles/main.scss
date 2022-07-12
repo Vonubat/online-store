@@ -87,6 +87,12 @@ html {
         cursor: pointer;
       }
 
+      .logo-brands .active {
+        transition: all 0.5s;
+        transform: scale(95%);
+        opacity: 50%;
+      }
+
       .form-check-inline {
         transform: scale(120%);
       }

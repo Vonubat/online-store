@@ -25,5 +25,16 @@ class Observer extends Executor {
     this.camera.camera3.addEventListener('change', this.executeAll.bind(this));
     this.camera.camera4.addEventListener('change', this.executeAll.bind(this));
   }
+
+  observeBrand(): void {
+    this.brand.apple.addEventListener('click', this.executeAll.bind(this));
+    this.brand.google.addEventListener('click', this.executeAll.bind(this));
+    this.brand.microsoft.addEventListener('click', this.executeAll.bind(this));
+    this.brand.nothing.addEventListener('click', this.executeAll.bind(this));
+    this.brand.samsung.addEventListener('click', this.executeAll.bind(this));
+    this.brand.sony.addEventListener('click', this.executeAll.bind(this));
+    this.brand.xiaomi.addEventListener('click', this.executeAll.bind(this));
+    this.brand.oneplus.addEventListener('click', this.executeAll.bind(this));
+  }
 }
 export default Observer;

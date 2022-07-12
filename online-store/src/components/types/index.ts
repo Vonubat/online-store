@@ -23,3 +23,16 @@ export const allColors: TColorValue[] = ['blue', 'black', 'green', 'red', 'white
 export type TCameraValue = 1 | 2 | 3 | 4;
 
 export const allCameras: TCameraValue[] = [1, 2, 3, 4];
+
+export type TBrandValue = 'apple' | 'samsung' | 'xiaomi' | 'sony' | 'microsoft' | 'google' | 'nothing' | 'oneplus';
+
+export const allBrands: TBrandValue[] = [
+  'apple',
+  'samsung',
+  'xiaomi',
+  'sony',
+  'microsoft',
+  'google',
+  'nothing',
+  'oneplus',
+];
