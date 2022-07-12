@@ -14,6 +14,7 @@ import Search from '../utilities/search-filter';
 import Color from '../utilities/color-filter';
 import Camera from '../utilities/camera-filter';
 import Brand from '../utilities/brand-filter';
+import { Popular } from '../utilities/popular-filter';
 
 class Executor {
   generator: Generator;
@@ -22,6 +23,7 @@ class Executor {
   color: Color;
   camera: Camera;
   brand: Brand;
+  popular: Popular;
   constructor() {
     this.generator = new Generator();
     this.loader = new Loader();
@@ -29,6 +31,7 @@ class Executor {
     this.color = new Color();
     this.camera = new Camera();
     this.brand = new Brand();
+    this.popular = new Popular();
   }
 
   async executeAll(event: Event): Promise<void> {
@@ -39,6 +42,7 @@ class Executor {
     filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executeCamera(event, await filteredData);
     filteredData = this.executeBrand(event, await filteredData);
+    filteredData = this.executePopular(event, await filteredData);
     this.executeGenerate(await filteredData); // for test
   }
 
@@ -167,6 +171,10 @@ class Executor {
     // console.log(brandStorage);
 
     return tempData;
+  }
+
+  async executePopular(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    return this.popular.favorites(event, data);
   }
 }
 

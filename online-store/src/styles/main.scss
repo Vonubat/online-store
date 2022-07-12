@@ -106,12 +106,11 @@ html {
         }
       }
 
-      .favorites {
-        display: flex;
-        justify-content: center;
-        .btn {
-          width: 150px;
-        }
+      .star {
+        display: block;
+        margin: auto;
+        cursor: pointer;
+        transform: scale(120%);
       }
     }
 
@@ -178,5 +177,18 @@ html {
     font-weight: 400;
     color: $light;
     white-space: nowrap;
+  }
+}
+
+.animation {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

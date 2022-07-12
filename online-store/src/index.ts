@@ -9,3 +9,4 @@ observer.observeSearch();
 observer.observeColor();
 observer.observeCamera();
 observer.observeBrand();
+observer.observePopular();

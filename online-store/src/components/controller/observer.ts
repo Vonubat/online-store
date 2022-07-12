@@ -36,5 +36,9 @@ class Observer extends Executor {
     this.brand.xiaomi.addEventListener('click', this.executeAll.bind(this));
     this.brand.oneplus.addEventListener('click', this.executeAll.bind(this));
   }
+
+  observePopular(): void {
+    this.popular.popular.addEventListener('click', this.executeAll.bind(this));
+  }
 }
 export default Observer;
