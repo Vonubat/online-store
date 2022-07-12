@@ -18,6 +18,12 @@ class Observer extends Executor {
     this.color.white.addEventListener('click', this.executeAll.bind(this));
     this.color.gray.addEventListener('click', this.executeAll.bind(this));
   }
-}
 
+  observeCamera(): void {
+    this.camera.camera1.addEventListener('change', this.executeAll.bind(this));
+    this.camera.camera2.addEventListener('change', this.executeAll.bind(this));
+    this.camera.camera3.addEventListener('change', this.executeAll.bind(this));
+    this.camera.camera4.addEventListener('change', this.executeAll.bind(this));
+  }
+}
 export default Observer;

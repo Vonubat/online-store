@@ -19,3 +19,7 @@ export interface IGoods {
 export type TColorValue = 'blue' | 'black' | 'green' | 'red' | 'white' | 'gray';
 
 export const allColors: TColorValue[] = ['blue', 'black', 'green', 'red', 'white', 'gray'];
+
+export type TCameraValue = 1 | 2 | 3 | 4;
+
+export const allCameras: TCameraValue[] = [1, 2, 3, 4];
