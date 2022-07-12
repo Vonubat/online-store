@@ -16,7 +16,7 @@ class Executor {
     this.color = new Color();
   }
 
-  async executeAll(event: Event) {
+  async executeAll(event: Event): Promise<void> {
     let filteredData: Promise<IGoodDeatails[]>;
     console.log(event);
 
@@ -50,7 +50,6 @@ class Executor {
 
     window.onunload = (): void => {
       localStorage.setItem('search', `${searchValue}`);
-      console.log('test2');
     };
 
     return this.search.search(data, searchValue);
@@ -67,19 +66,22 @@ class Executor {
           localStorage.setItem(color, color);
         }
       }
-
       if (localStorage.getItem(color)) {
         return color;
       } else return;
     });
 
-    tempData = colorStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
-      return this.color.color(previousData, colorStorage);
-    }, data);
+    if (colorStorage.length === 0) {
+      this.color.color(data, colorStorage);
+    } else {
+      tempData = colorStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
+        return this.color.color(previousData, colorStorage);
+      }, data);
+    }
 
     // console.log(tempData);
     // console.log(localStorage);
-    // console.log(colorStorage);
+    console.log(colorStorage);
 
     return tempData;
   }
