@@ -1,4 +1,4 @@
-import { IGoodDeatails, ColorValue } from '../types/index';
+import { IGoodDeatails, TColorValue, allColors } from '../types/index';
 
 export class Color {
   blue: HTMLDivElement;
@@ -16,14 +16,12 @@ export class Color {
     this.gray = document.getElementById('gray') as HTMLDivElement;
   }
 
-  color(data: IGoodDeatails[], value: ColorValue): IGoodDeatails[] {
-    if (this[value].id === value && !this[value].innerHTML) {
-      this[value].innerHTML = '✓';
-    } else {
-      this[value].innerHTML = '';
-    }
+  color(data: IGoodDeatails[], colorStorage: TColorValue[]): IGoodDeatails[] {
+    allColors.forEach((item: TColorValue): string => (this[item].innerHTML = ''));
+    colorStorage.forEach((item: TColorValue): string => (this[item].innerHTML = `&#10003`));
+
     return data.filter((item: IGoodDeatails): IGoodDeatails | undefined => {
-      if (item.color === value) {
+      if (colorStorage.some((color: TColorValue): boolean => item.color === color)) {
         return item;
       } else return;
     });

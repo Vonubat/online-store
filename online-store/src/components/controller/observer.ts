@@ -6,17 +6,17 @@ class Observer extends Executor {
   }
 
   observeSearch(): void {
-    this.search.searchInput.addEventListener('click', this.executeSearch.bind(this));
-    this.search.searchInput.addEventListener('input', this.executeSearch.bind(this));
+    this.search.searchInput.addEventListener('click', this.executeAll.bind(this));
+    this.search.searchInput.addEventListener('input', this.executeAll.bind(this));
   }
 
   observeColor(): void {
-    this.color.blue.addEventListener('click', this.executeColor.bind(this, 'blue'));
-    this.color.black.addEventListener('click', this.executeColor.bind(this, 'black'));
-    this.color.green.addEventListener('click', this.executeColor.bind(this, 'green'));
-    this.color.red.addEventListener('click', this.executeColor.bind(this, 'red'));
-    this.color.white.addEventListener('click', this.executeColor.bind(this, 'white'));
-    this.color.gray.addEventListener('click', this.executeColor.bind(this, 'gray'));
+    this.color.blue.addEventListener('click', this.executeAll.bind(this));
+    this.color.black.addEventListener('click', this.executeAll.bind(this));
+    this.color.green.addEventListener('click', this.executeAll.bind(this));
+    this.color.red.addEventListener('click', this.executeAll.bind(this));
+    this.color.white.addEventListener('click', this.executeAll.bind(this));
+    this.color.gray.addEventListener('click', this.executeAll.bind(this));
   }
 }
 

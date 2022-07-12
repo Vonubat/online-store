@@ -16,4 +16,6 @@ export interface IGoods {
   data: Readonly<IGoodDeatails>[];
 }
 
-export type ColorValue = 'blue' | 'black' | 'green' | 'red' | 'white' | 'gray';
+export type TColorValue = 'blue' | 'black' | 'green' | 'red' | 'white' | 'gray';
+
+export const allColors: TColorValue[] = ['blue', 'black', 'green', 'red', 'white', 'gray'];

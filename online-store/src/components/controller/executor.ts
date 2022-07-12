@@ -1,4 +1,4 @@
-import { IGoods, IGoodDeatails, ColorValue } from '../types/index';
+import { IGoods, IGoodDeatails, TColorValue, allColors } from '../types/index';
 import Generator from './generator';
 import Loader from './loader';
 import Search from '../utilities/search-filter';
@@ -16,6 +16,15 @@ class Executor {
     this.color = new Color();
   }
 
+  async executeAll(event: Event) {
+    let filteredData: Promise<IGoodDeatails[]>;
+    console.log(event);
+
+    filteredData = this.executeSearch(event, await this.executeLoad());
+    filteredData = this.executeColor(event, await filteredData);
+    this.executeGenerate(await filteredData); // for test
+  }
+
   executeGenerate(data: IGoodDeatails[]): void {
     this.generator.generate(data);
   }
@@ -25,8 +34,13 @@ class Executor {
     return goods.data;
   }
 
-  async executeSearch(event: Event): Promise<void> {
-    let searchValue: string = (event.target as HTMLInputElement).value;
+  async executeSearch(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    let searchValue: string;
+    if (typeof (event.target as HTMLInputElement).value === 'undefined') {
+      searchValue = this.search.searchInput.value;
+    } else {
+      searchValue = (event.target as HTMLInputElement).value;
+    }
 
     if (!searchValue && localStorage.getItem('search')) {
       (event.target as HTMLInputElement).value = localStorage.getItem('search') || '';
@@ -39,20 +53,35 @@ class Executor {
       console.log('test2');
     };
 
-    const filteredResult: IGoodDeatails[] = this.search.search(await this.executeLoad(), searchValue);
-
-    this.executeGenerate(filteredResult); // for test
+    return this.search.search(data, searchValue);
   }
 
-  async executeColor(color: ColorValue): Promise<void> {
-    if (!localStorage.getItem(`${color}`)) {
-      localStorage.setItem(`${color}`, `${color}`);
-    } else {
-      localStorage.removeItem(`${color}`);
-    }
-    const filteredResult: IGoodDeatails[] = this.color.color(await this.executeLoad(), color);
+  async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    let tempData: IGoodDeatails[] = data;
 
-    this.executeGenerate(filteredResult); // for test
+    const colorStorage: TColorValue[] = allColors.filter((color: TColorValue): TColorValue | undefined => {
+      if (color === (event.target as HTMLInputElement).id) {
+        if (localStorage.getItem(color)) {
+          localStorage.removeItem(color);
+        } else {
+          localStorage.setItem(color, color);
+        }
+      }
+
+      if (localStorage.getItem(color)) {
+        return color;
+      } else return;
+    });
+
+    tempData = colorStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
+      return this.color.color(previousData, colorStorage);
+    }, data);
+
+    // console.log(tempData);
+    // console.log(localStorage);
+    // console.log(colorStorage);
+
+    return tempData;
   }
 }
 
