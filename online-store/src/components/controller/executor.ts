@@ -1,4 +1,4 @@
-import { IGoods, IGoodDeatails, TColorValue, TCameraValue, allColors, allCameras } from '../types/index';
+import { IGoods, IGoodDeatails, TColorValue, allColors } from '../types/index';
 import Generator from '../view/generator';
 import Loader from './loader';
 import Search from '../utilities/search-filter';
@@ -117,34 +117,7 @@ class Executor {
   }
 
   async executeCamera(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    let tempData: IGoodDeatails[] = data;
-
-    const cameraStorage: TCameraValue[] = allCameras.filter((quantity: TCameraValue): TCameraValue | undefined => {
-      if (`camera${quantity}` === (event.target as HTMLInputElement).id) {
-        if (localStorage.getItem(`camera${quantity}`)) {
-          localStorage.removeItem(`camera${quantity}`);
-        } else {
-          localStorage.setItem(`camera${quantity}`, `camera${quantity}`);
-        }
-      }
-      if (localStorage.getItem(`camera${quantity}`)) {
-        return quantity;
-      } else return;
-    });
-
-    if (cameraStorage.length === 0) {
-      this.camera.camera(data, cameraStorage);
-    } else {
-      tempData = cameraStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
-        return this.camera.camera(previousData, cameraStorage);
-      }, data);
-    }
-
-    // console.log(tempData);
-    // console.log(localStorage);
-    // console.log(cameraStorage);
-
-    return tempData;
+    return this.camera.camera(event, data);
   }
 
   async executeBrand(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
