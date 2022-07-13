@@ -141,6 +141,28 @@
 
     <section class="cards-container container" id="cards-container"></section>
 
+    <!-- Button trigger modal -->
+    <button
+      type="button"
+      class="btn btn-primary visually-hidden"
+      data-bs-toggle="modal"
+      data-bs-target="#modal-window"
+      id="modal-trigger"
+    ></button>
+
+    <!-- modal-window -->
+    <div class="modal fade" id="modal-window" tabindex="-1" aria-labelledby="modal-windowLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-windowLabel">Информационное сообщение</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Извините, совпадений не обнаружено</div>
+        </div>
+      </div>
+    </div>
+
     <footer class="footer container-fluid mt-3">
       <div class="logo">
         <a href="https://rs.school/" target="_blank">

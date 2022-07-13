@@ -1,9 +1,20 @@
 import { IGoodDeatails } from '../types/index';
 
 class Generator {
+  modalWindow: HTMLDivElement;
+  modalTrigger: HTMLButtonElement;
+
+  constructor() {
+    this.modalWindow = document.getElementById('modal-window') as HTMLDivElement;
+    this.modalTrigger = document.getElementById('modal-trigger') as HTMLButtonElement;
+  }
+
   generate(data: IGoodDeatails[]): void {
     const goods: IGoodDeatails[] = data;
-
+    if (goods.length === 0) {
+      const event: Event = new Event('click');
+      this.modalTrigger.dispatchEvent(event);
+    }
     const sectionCardsContainer = document.getElementById('cards-container') as HTMLElement;
 
     if (sectionCardsContainer.childNodes.length > 0) {
