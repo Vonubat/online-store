@@ -17,8 +17,7 @@ import Brand from '../utilities/brand-filter';
 import Popular from '../utilities/popular-filter';
 import ResetLocalStorage from '../utilities/reset-local-storage';
 import Sort from '../utilities/sort';
-import Quantity from '../utilities/quantity-filter';
-import Year from '../utilities/year-filter';
+import Sliders from '../utilities/sliders';
 
 class Executor {
   generator: Generator;
@@ -30,8 +29,8 @@ class Executor {
   popular: Popular;
   resetLocalSorage: ResetLocalStorage;
   sort: Sort;
-  quantity: Quantity;
-  year: Year;
+  sliders: Sliders;
+
   constructor() {
     this.generator = new Generator();
     this.loader = new Loader();
@@ -42,8 +41,7 @@ class Executor {
     this.popular = new Popular();
     this.resetLocalSorage = new ResetLocalStorage();
     this.sort = new Sort();
-    this.quantity = new Quantity();
-    this.year = new Year();
+    this.sliders = new Sliders();
   }
 
   async executeAll(event: Event): Promise<void> {
@@ -56,6 +54,7 @@ class Executor {
     filteredData = this.executeCamera(event, await filteredData);
     filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executePopular(event, await filteredData);
+    filteredData = this.executeSlides(event, await filteredData);
     this.executeGenerate(await filteredData); // for test
   }
 
@@ -197,6 +196,10 @@ class Executor {
 
   async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.sort.sort(event, data);
+  }
+
+  async executeSlides(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    return this.sliders.filter(event, data);
   }
 }
 

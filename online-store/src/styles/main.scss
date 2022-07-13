@@ -124,10 +124,10 @@ html {
       .slider {
         margin: auto;
         width: 250px;
-      }
 
-      .slider .noUi-connect {
-        background-color: $primary;
+        .noUi-connect {
+          background-color: $primary;
+        }
       }
     }
   }

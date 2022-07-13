@@ -57,6 +57,24 @@ class Observer extends Executor {
     this.sort.quantityAscent.addEventListener('click', this.executeAll.bind(this));
     this.sort.quantityDescent.addEventListener('click', this.executeAll.bind(this));
   }
+
+  observeSliders(): void {
+    this.sliders.quantitySlider.on('change', this.sliders.setter.bind(this.sliders));
+    this.sliders.yearSlider.on('change', this.sliders.setter.bind(this.sliders));
+
+    const noUiTouchAreas: NodeListOf<Element> = document.querySelectorAll('.noUi-touch-area');
+    for (const item of noUiTouchAreas) {
+      item.addEventListener('click', this.executeAll.bind(this));
+    }
+    const noUiConnect: NodeListOf<Element> = document.querySelectorAll('.noUi-connect');
+    for (const item of noUiConnect) {
+      item.addEventListener('click', this.executeAll.bind(this));
+    }
+    const noUiConnects: NodeListOf<Element> = document.querySelectorAll('.noUi-connects');
+    for (const item of noUiConnects) {
+      item.addEventListener('click', this.executeAll.bind(this));
+    }
+  }
 }
 
 export default Observer;

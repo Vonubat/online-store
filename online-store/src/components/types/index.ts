@@ -53,11 +53,3 @@ export const allSorts: TSortValue[] = [
   'quantity-ascent',
   'quantity-descent',
 ];
-
-export interface PartialFormatter {
-  to: (value: number) => string | number;
-  from?: (value: string) => number | false;
-}
-export interface Formatter extends PartialFormatter {
-  from: (value: string) => number | false;
-}
