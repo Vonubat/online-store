@@ -15,9 +15,10 @@ import Color from '../utilities/color-filter';
 import Camera from '../utilities/camera-filter';
 import Brand from '../utilities/brand-filter';
 import Popular from '../utilities/popular-filter';
-import ResetLocalStorage from '../utilities/reset-local-storage';
+
 import Sort from '../utilities/sort';
 import Sliders from '../utilities/sliders';
+import LocalStorage from '../utilities/local-storage';
 
 class Executor {
   generator: Generator;
@@ -27,9 +28,9 @@ class Executor {
   camera: Camera;
   brand: Brand;
   popular: Popular;
-  resetLocalSorage: ResetLocalStorage;
   sort: Sort;
   sliders: Sliders;
+  localStorage: LocalStorage;
 
   constructor() {
     this.generator = new Generator();
@@ -39,9 +40,9 @@ class Executor {
     this.camera = new Camera();
     this.brand = new Brand();
     this.popular = new Popular();
-    this.resetLocalSorage = new ResetLocalStorage();
     this.sort = new Sort();
     this.sliders = new Sliders();
+    this.localStorage = new LocalStorage();
   }
 
   async executeAll(event: Event): Promise<void> {
@@ -54,7 +55,7 @@ class Executor {
     filteredData = this.executeCamera(event, await filteredData);
     filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executePopular(event, await filteredData);
-    filteredData = this.executeSlides(event, await filteredData);
+    this.executeLocalStorage(event, await filteredData);
     this.executeGenerate(await filteredData); // for test
   }
 
@@ -189,17 +190,17 @@ class Executor {
     return this.popular.favorites(event, data);
   }
 
-  executeResetLocalStorage(event: Event): void {
-    this.resetLocalSorage.reset();
-    this.executeAll(event);
-  }
-
   async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.sort.sort(event, data);
   }
 
   async executeSlides(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.sliders.filter(event, data);
+  }
+
+  executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
+    this.localStorage.save(data);
+    this.localStorage.reset(event);
   }
 }
 
