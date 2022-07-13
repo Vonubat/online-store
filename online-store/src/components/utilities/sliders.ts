@@ -5,6 +5,7 @@ export class Sliders {
   quantitySlider: noUiSlider.API;
   yearSlider: noUiSlider.API;
   formatForSlider: noUiSlider.Formatter;
+  rangeFilter: HTMLDivElement;
 
   constructor() {
     this.formatForSlider = {
@@ -56,6 +57,8 @@ export class Sliders {
         return Math.round(numericValue);
       },
     };
+
+    this.rangeFilter = document.getElementById('range-filter') as HTMLDivElement;
   }
 
   setter(): void {

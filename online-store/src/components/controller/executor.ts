@@ -55,6 +55,7 @@ class Executor {
     filteredData = this.executeCamera(event, await filteredData);
     filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executePopular(event, await filteredData);
+    filteredData = this.executeSlides(event, await filteredData);
     this.executeLocalStorage(event, await filteredData);
     this.executeGenerate(await filteredData); // for test
   }
