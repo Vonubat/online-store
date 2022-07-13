@@ -1,13 +1,4 @@
-import {
-  IGoods,
-  IGoodDeatails,
-  TColorValue,
-  TCameraValue,
-  allColors,
-  allCameras,
-  TBrandValue,
-  allBrands,
-} from '../types/index';
+import { IGoods, IGoodDeatails, TColorValue, TCameraValue, allColors, allCameras } from '../types/index';
 import Generator from '../view/generator';
 import Loader from './loader';
 import Search from '../utilities/search-filter';
@@ -157,34 +148,7 @@ class Executor {
   }
 
   async executeBrand(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    let tempData: IGoodDeatails[] = data;
-
-    const brandStorage: TBrandValue[] = allBrands.filter((brand: TBrandValue): TBrandValue | undefined => {
-      if (brand.toLocaleLowerCase() === (event.target as HTMLInputElement).id) {
-        if (localStorage.getItem(brand)) {
-          localStorage.removeItem(brand);
-        } else {
-          localStorage.setItem(brand, brand);
-        }
-      }
-      if (localStorage.getItem(brand)) {
-        return brand;
-      } else return;
-    });
-
-    if (brandStorage.length === 0) {
-      this.brand.brand(data, brandStorage);
-    } else {
-      tempData = brandStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
-        return this.brand.brand(previousData, brandStorage);
-      }, data);
-    }
-
-    // console.log(tempData);
-    // console.log(localStorage);
-    // console.log(brandStorage);
-
-    return tempData;
+    return this.brand.brand(event, data);
   }
 
   async executePopular(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
