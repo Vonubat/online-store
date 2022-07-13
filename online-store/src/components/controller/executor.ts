@@ -1,4 +1,4 @@
-import { IGoods, IGoodDeatails, TColorValue, allColors } from '../types/index';
+import { IGoods, IGoodDeatails } from '../types/index';
 import Generator from '../view/generator';
 import Loader from './loader';
 import Search from '../utilities/search-filter';
@@ -86,34 +86,7 @@ class Executor {
   }
 
   async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    let tempData: IGoodDeatails[] = data;
-
-    const colorStorage: TColorValue[] = allColors.filter((color: TColorValue): TColorValue | undefined => {
-      if (color === (event.target as HTMLInputElement).id) {
-        if (localStorage.getItem(color)) {
-          localStorage.removeItem(color);
-        } else {
-          localStorage.setItem(color, color);
-        }
-      }
-      if (localStorage.getItem(color)) {
-        return color;
-      } else return;
-    });
-
-    if (colorStorage.length === 0) {
-      this.color.color(data, colorStorage);
-    } else {
-      tempData = colorStorage.reduce((previousData: IGoodDeatails[]): IGoodDeatails[] => {
-        return this.color.color(previousData, colorStorage);
-      }, data);
-    }
-
-    // console.log(tempData);
-    // console.log(localStorage);
-    // console.log(colorStorage);
-
-    return tempData;
+    return this.color.color(event, data);
   }
 
   async executeCamera(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
