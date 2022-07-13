@@ -1,4 +1,4 @@
-import { IGoodDeatails } from './../types/index';
+import { IGoodDeatails } from '../types/index';
 
 class Generator {
   generate(data: IGoodDeatails[]): void {

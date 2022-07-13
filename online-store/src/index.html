@@ -16,7 +16,9 @@
         <h1 class="h1">Online Store</h1>
         <img class="online-shopping" src="./assets/online-shopping.png" alt="online-shopping.png" />
       </div>
-
+      <a href="#" data-bs-toggle="custom-tooltip" title="Только популярные"
+        ><img id="popular" class="star" src="./assets/star.png" alt="star.png"
+      /></a>
       <div class="controls">
         <button
           class="btn btn-primary me-3"
@@ -124,15 +126,14 @@
               <div class="btn btn-light ms-2 me-2 mb-2" id="white"></div>
               <div class="btn btn-secondary ms-2 me-2 mb-2" id="gray"></div>
             </div>
-
-            <p class="text-warning bg-dark">Только популярные:</p>
-            <img id="popular" class="star" src="./assets/star.png" alt="star.png" />
           </div>
 
           <div class="range-filter">
             <h5 class="offcanvas-title mt-3 mb-3">Фильтры по диапазону</h5>
             <p class="text-warning bg-dark">Количество на складе:</p>
+            <div class="slider mt-5 mb-3 noUi-connect" id="slider-quantity"></div>
             <p class="text-warning bg-dark">Год выхода на рынок:</p>
+            <div class="slider mt-5 mb-3 noUi-connect" id="slider-year"></div>
           </div>
         </div>
       </div>

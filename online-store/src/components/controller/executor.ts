@@ -8,15 +8,17 @@ import {
   TBrandValue,
   allBrands,
 } from '../types/index';
-import Generator from './generator';
+import Generator from '../view/generator';
 import Loader from './loader';
 import Search from '../utilities/search-filter';
 import Color from '../utilities/color-filter';
 import Camera from '../utilities/camera-filter';
 import Brand from '../utilities/brand-filter';
-import { Popular } from '../utilities/popular-filter';
+import Popular from '../utilities/popular-filter';
 import ResetLocalStorage from '../utilities/reset-local-storage';
 import Sort from '../utilities/sort';
+import Quantity from '../utilities/quantity-filter';
+import Year from '../utilities/year-filter';
 
 class Executor {
   generator: Generator;
@@ -28,6 +30,8 @@ class Executor {
   popular: Popular;
   resetLocalSorage: ResetLocalStorage;
   sort: Sort;
+  quantity: Quantity;
+  year: Year;
   constructor() {
     this.generator = new Generator();
     this.loader = new Loader();
@@ -38,6 +42,8 @@ class Executor {
     this.popular = new Popular();
     this.resetLocalSorage = new ResetLocalStorage();
     this.sort = new Sort();
+    this.quantity = new Quantity();
+    this.year = new Year();
   }
 
   async executeAll(event: Event): Promise<void> {
