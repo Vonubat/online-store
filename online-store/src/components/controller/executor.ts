@@ -61,28 +61,7 @@ class Executor {
   }
 
   async executeSearch(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    let searchValue: string;
-
-    if (
-      typeof (event.target as HTMLInputElement).value === 'undefined' ||
-      (event.target as HTMLInputElement).value === 'cameraEvent'
-    ) {
-      searchValue = this.search.searchInput.value;
-    } else {
-      searchValue = (event.target as HTMLInputElement).value;
-    }
-
-    if (!searchValue && localStorage.getItem('search')) {
-      (event.target as HTMLInputElement).value = localStorage.getItem('search') || '';
-      searchValue = (event.target as HTMLInputElement).value;
-      localStorage.removeItem('search');
-    }
-
-    window.onunload = (): void => {
-      localStorage.setItem('search', `${searchValue}`);
-    };
-
-    return this.search.search(data, searchValue);
+    return this.search.search(event, data);
   }
 
   async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
