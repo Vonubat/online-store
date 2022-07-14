@@ -24,7 +24,7 @@
       "slug": "xiaomi_poco_f3-10758"
     },
     {
-      "phone_name": "Pixel 4 XL",
+      "phone_name": "Google Pixel 4 XL",
       "brand": "Google",
       "year": 2013,
       "color": "red",
@@ -134,7 +134,7 @@
       "slug": "xiaomi_12s_ultra-11614"
     },
     {
-      "phone_name": "Xperia 5 III XQ-BQ72",
+      "phone_name": "Sony Xperia 5 III XQ-BQ72",
       "brand": "Sony",
       "year": 2005,
       "color": "red",
@@ -167,7 +167,7 @@
       "slug": "nothing_phone_(1)-11636"
     },
     {
-      "phone_name": "Lumia 950 XL Dual SIM",
+      "phone_name": "Microsoft Lumia 950 XL Dual SIM",
       "brand": "Microsoft",
       "year": 2009,
       "color": "black",
@@ -200,7 +200,7 @@
       "slug": "samsung_galaxy_a53_5g-11268"
     },
     {
-      "phone_name": "Xperia XA2 Plus",
+      "phone_name": "Sony Xperia XA2 Plus",
       "brand": "Sony",
       "year": 2016,
       "color": "green",
@@ -222,7 +222,7 @@
       "slug": "xiaomi_12s-11645"
     },
     {
-      "phone_name": "iPhone XR",
+      "phone_name": "Apple iPhone XR",
       "brand": "Apple",
       "year": 2013,
       "color": "blue",
@@ -244,7 +244,7 @@
       "slug": "xiaomi_redmi_note_11-11336"
     },
     {
-      "phone_name": "Surface Duo",
+      "phone_name": "Microsoft Surface Duo",
       "brand": "Microsoft",
       "year": 2022,
       "color": "white",
@@ -266,7 +266,7 @@
       "slug": "samsung_galaxy_a13-11402"
     },
     {
-      "phone_name": "iPhone SE (2022)",
+      "phone_name": "Apple iPhone SE (2022)",
       "brand": "Apple",
       "year": 2022,
       "color": "red",
@@ -277,7 +277,7 @@
       "slug": "apple_iphone_se_(2022)-11410"
     },
     {
-      "phone_name": "iPhone 13 mini",
+      "phone_name": "Apple iPhone 13 mini",
       "brand": "Apple",
       "year": 2014,
       "color": "white",
@@ -288,7 +288,7 @@
       "slug": "apple_iphone_13_mini-11104"
     },
     {
-      "phone_name": "Xperia XZ1 Compact",
+      "phone_name": "Sony Xperia XZ1 Compact",
       "brand": "Sony",
       "year": 2008,
       "color": "black",
@@ -299,7 +299,7 @@
       "slug": "sony_xperia_xz1_compact-8610"
     },
     {
-      "phone_name": "Pixel 5a 5G",
+      "phone_name": "Google Pixel 5a 5G",
       "brand": "Google",
       "year": 2013,
       "color": "black",
@@ -310,7 +310,7 @@
       "slug": "google_pixel_5a_5g-11059"
     },
     {
-      "phone_name": "Lumia 950 XL",
+      "phone_name": "Microsoft Lumia 950 XL",
       "brand": "Microsoft",
       "year": 2015,
       "color": "white",
