@@ -47,6 +47,7 @@ class Observer extends Executor {
 
   observeLocalStorage(): void {
     this.localStorage.resetLocalStorage.addEventListener('click', this.executeAll.bind(this));
+    this.localStorage.resetFilters.addEventListener('click', this.executeAll.bind(this));
   }
 
   observeSort(): void {

@@ -10,6 +10,7 @@ html {
 
 .header {
   position: fixed;
+  top: 0px;
   height: 150px;
   background-color: $light;
   border-radius: 0px 0px 30px 30px;
@@ -167,6 +168,8 @@ html {
 }
 
 .footer {
+  position: relative;
+  top: 200px;
   height: 75px;
   background-color: $gray-800;
   display: flex;

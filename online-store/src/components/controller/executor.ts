@@ -91,7 +91,8 @@ class Executor {
 
   executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
     this.localStorage.save(data);
-    this.localStorage.reset(event);
+    this.localStorage.resetHard(event);
+    this.localStorage.resetSoft(event);
   }
 
   executeGenerate(data: IGoodDeatails[]): void {
