@@ -1,15 +1,7 @@
 import './styles/normalize.css';
 import './styles/main.scss';
 import 'bootstrap';
-import Observer from './components/controller/observer';
+import App from './components/app/app';
 
-const observer: Observer = new Observer();
-observer.observeDOMContentLoaded();
-observer.observeSearch();
-observer.observeColor();
-observer.observeCamera();
-observer.observeBrand();
-observer.observePopular();
-observer.observeSort();
-observer.observeSliders();
-observer.observeLocalStorage();
+const app = new App();
+app.start();
