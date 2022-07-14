@@ -2,10 +2,10 @@ import * as noUiSlider from 'nouislider';
 import { IGoodDeatails } from '../types';
 
 export class Sliders {
-  quantitySlider: noUiSlider.API;
-  yearSlider: noUiSlider.API;
-  formatForSlider: noUiSlider.Formatter;
-  rangeFilter: HTMLDivElement;
+  public quantitySlider: noUiSlider.API;
+  public yearSlider: noUiSlider.API;
+  public formatForSlider: noUiSlider.Formatter;
+  public rangeFilter: HTMLDivElement;
 
   constructor() {
     this.formatForSlider = {
@@ -61,7 +61,7 @@ export class Sliders {
     this.rangeFilter = document.getElementById('range-filter') as HTMLDivElement;
   }
 
-  setter(): void {
+  public setter(): void {
     const quantityValues: number[] = this.quantitySlider.get() as number[];
     const yearValues: number[] = this.yearSlider.get() as number[];
     localStorage.setItem('quantityStart', `${quantityValues[0]}`);
@@ -70,7 +70,7 @@ export class Sliders {
     localStorage.setItem('yearEnd', `${yearValues[1]}`);
   }
 
-  filter(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public filter(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     const quantityStart: string = localStorage.getItem('quantityStart') || '';
     const quantityEnd: string = localStorage.getItem('quantityEnd') || '';
     const yearStart: string = localStorage.getItem('yearStart') || '';

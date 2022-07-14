@@ -1,12 +1,12 @@
 import { allSorts, IGoodDeatails, TSortValue } from '../types/index';
 
 export class Sort {
-  nameAscent: HTMLAnchorElement;
-  nameDescent: HTMLAnchorElement;
-  yearAscent: HTMLAnchorElement;
-  yearDescent: HTMLAnchorElement;
-  quantityAscent: HTMLAnchorElement;
-  quantityDescent: HTMLAnchorElement;
+  public nameAscent: HTMLAnchorElement;
+  public nameDescent: HTMLAnchorElement;
+  public yearAscent: HTMLAnchorElement;
+  public yearDescent: HTMLAnchorElement;
+  public quantityAscent: HTMLAnchorElement;
+  public quantityDescent: HTMLAnchorElement;
 
   constructor() {
     this.nameAscent = document.getElementById('name-ascent') as HTMLAnchorElement;
@@ -17,7 +17,7 @@ export class Sort {
     this.quantityDescent = document.getElementById('quantity-descent') as HTMLAnchorElement;
   }
 
-  sort(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public sort(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let id: string = (event.target as HTMLElement).id;
     // console.log(localStorage);
 

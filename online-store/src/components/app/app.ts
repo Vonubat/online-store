@@ -5,7 +5,7 @@ export class App extends Observer {
     super();
   }
 
-  start(): void {
+  public start(): void {
     this.observeDOMContentLoaded();
     this.observeSearch();
     this.observeColor();

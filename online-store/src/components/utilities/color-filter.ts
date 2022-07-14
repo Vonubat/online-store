@@ -1,12 +1,12 @@
 import { IGoodDeatails, TColorValue, allColors } from '../types/index';
 
 export class Color {
-  blue: HTMLDivElement;
-  black: HTMLDivElement;
-  green: HTMLDivElement;
-  red: HTMLDivElement;
-  white: HTMLDivElement;
-  gray: HTMLDivElement;
+  public blue: HTMLDivElement;
+  public black: HTMLDivElement;
+  public green: HTMLDivElement;
+  public red: HTMLDivElement;
+  public white: HTMLDivElement;
+  public gray: HTMLDivElement;
   constructor() {
     this.blue = document.getElementById('blue') as HTMLDivElement;
     this.black = document.getElementById('black') as HTMLDivElement;
@@ -16,7 +16,7 @@ export class Color {
     this.gray = document.getElementById('gray') as HTMLDivElement;
   }
 
-  color(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public color(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
 
     const colorStorage: TColorValue[] = allColors.filter((color: TColorValue): TColorValue | undefined => {

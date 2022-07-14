@@ -1,10 +1,10 @@
 import { IGoodDeatails, TCameraValue, allCameras } from '../types/index';
 
 export class Camera {
-  camera1: HTMLInputElement;
-  camera2: HTMLInputElement;
-  camera3: HTMLInputElement;
-  camera4: HTMLInputElement;
+  public camera1: HTMLInputElement;
+  public camera2: HTMLInputElement;
+  public camera3: HTMLInputElement;
+  public camera4: HTMLInputElement;
 
   constructor() {
     this.camera1 = document.getElementById('camera1') as HTMLInputElement;
@@ -13,7 +13,7 @@ export class Camera {
     this.camera4 = document.getElementById('camera4') as HTMLInputElement;
   }
 
-  camera(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public camera(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
 
     const cameraStorage: TCameraValue[] = allCameras.filter((quantity: TCameraValue): TCameraValue | undefined => {

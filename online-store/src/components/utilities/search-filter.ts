@@ -1,12 +1,12 @@
 import { IGoodDeatails } from '../types/index';
 
 export class Search {
-  searchInput: HTMLInputElement;
+  public searchInput: HTMLInputElement;
   constructor() {
     this.searchInput = document.getElementById('search-filter') as HTMLInputElement;
   }
 
-  search(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public search(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let inputValue: string;
 
     if (

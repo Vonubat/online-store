@@ -9,25 +9,25 @@ import {
 } from '../types/index';
 
 export class LocalStorage {
-  resetLocalStorage: HTMLButtonElement;
-  resetFilters: HTMLButtonElement;
+  public resetLocalStorage: HTMLButtonElement;
+  public resetFilters: HTMLButtonElement;
   constructor() {
     this.resetLocalStorage = document.getElementById('reset-local-storage') as HTMLButtonElement;
     this.resetFilters = document.getElementById('reset-filters') as HTMLButtonElement;
   }
 
-  save(data: IGoodDeatails[]): void {
+  public save(data: IGoodDeatails[]): void {
     localStorage.setItem('data', `${JSON.stringify(data)}`);
   }
 
-  resetHard(event: Event): void {
+  public resetHard(event: Event): void {
     if ((event.target as HTMLElement).id === 'reset-local-storage') {
       localStorage.clear();
       location.reload();
     }
   }
 
-  resetSoft(event: Event): void {
+  public resetSoft(event: Event): void {
     if ((event.target as HTMLElement).id === 'reset-filters') {
       for (const key in localStorage) {
         if (!localStorage.hasOwnProperty(key)) {

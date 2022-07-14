@@ -1,7 +1,7 @@
 import { IGoodDeatails } from '../types/index';
 
 class Generator {
-  generate(data: IGoodDeatails[]): void {
+  public generate(data: IGoodDeatails[]): void {
     const goods: IGoodDeatails[] = data;
 
     const sectionCardsContainer = document.getElementById('cards-container') as HTMLElement;

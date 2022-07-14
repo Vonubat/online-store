@@ -12,22 +12,21 @@ import Sliders from '../utilities/sliders';
 import LocalStorage from '../utilities/local-storage';
 import ShoppingCart from '../utilities/shopping-cart';
 
-class Executor {
-  generator: Generator;
-  loader: Loader;
-  search: Search;
-  color: Color;
-  camera: Camera;
-  brand: Brand;
-  popular: Popular;
-  sort: Sort;
-  sliders: Sliders;
-  localStorage: LocalStorage;
-  shoppingCart: ShoppingCart;
+class Executor extends Loader {
+  protected generator: Generator;
+  protected search: Search;
+  protected color: Color;
+  protected camera: Camera;
+  protected brand: Brand;
+  protected popular: Popular;
+  protected sort: Sort;
+  protected sliders: Sliders;
+  protected localStorage: LocalStorage;
+  protected shoppingCart: ShoppingCart;
 
   constructor() {
+    super();
     this.generator = new Generator();
-    this.loader = new Loader();
     this.search = new Search();
     this.color = new Color();
     this.camera = new Camera();
@@ -39,7 +38,7 @@ class Executor {
     this.shoppingCart = new ShoppingCart();
   }
 
-  async executeAll(event: Event): Promise<void> {
+  protected async executeAll(event: Event): Promise<void> {
     let filteredData: Promise<IGoodDeatails[]>;
     // console.log(event);
 
@@ -56,50 +55,50 @@ class Executor {
     this.executeLocalStorage(event, await filteredData);
   }
 
-  async executeLoad(): Promise<IGoodDeatails[]> {
-    const goods: IGoods = (await this.loader.load()) as IGoods;
+  protected async executeLoad(): Promise<IGoodDeatails[]> {
+    const goods: IGoods = (await this.load()) as IGoods;
     return goods.data;
   }
 
-  async executeSearch(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executeSearch(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.search.search(event, data);
   }
 
-  async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.color.color(event, data);
   }
 
-  async executeCamera(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executeCamera(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.camera.camera(event, data);
   }
 
-  async executeBrand(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executeBrand(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.brand.brand(event, data);
   }
 
-  async executePopular(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executePopular(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.popular.favorites(event, data);
   }
 
-  async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.sort.sort(event, data);
   }
 
-  async executeSlides(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+  protected async executeSlides(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.sliders.filter(event, data);
   }
 
-  executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
+  protected executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
     this.localStorage.save(data);
     this.localStorage.resetHard(event);
     this.localStorage.resetSoft(event);
   }
 
-  executeGenerate(data: IGoodDeatails[]): void {
+  protected executeGenerate(data: IGoodDeatails[]): void {
     this.generator.generate(data);
   }
 
-  executeShoppingCart(event: Event): void {
+  protected executeShoppingCart(event: Event): void {
     this.shoppingCart.updateActualGoods(event);
   }
 }

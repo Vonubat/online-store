@@ -1,7 +1,7 @@
 export class ShoppingCart {
-  shopingCartNotification: HTMLDivElement;
-  shopingCartAdd: NodeListOf<Element>;
-  modalTrigger: HTMLButtonElement;
+  protected shopingCartNotification: HTMLDivElement;
+  protected shopingCartAdd: NodeListOf<Element>;
+  private modalTrigger: HTMLButtonElement;
 
   constructor() {
     this.shopingCartNotification = document.getElementById('shoping-cart-notification') as HTMLDivElement;
@@ -9,7 +9,7 @@ export class ShoppingCart {
     this.modalTrigger = document.getElementById('modal-trigger') as HTMLButtonElement;
   }
 
-  updateActualGoods(event: Event): void {
+  public updateActualGoods(event: Event): void {
     this.shopingCartAdd = document.querySelectorAll('.shoping-cart-add') as NodeListOf<Element>;
     for (const good of this.shopingCartAdd) {
       good.addEventListener('click', this.addToCart.bind(this));
@@ -17,7 +17,7 @@ export class ShoppingCart {
     }
   }
 
-  addToCart(event: Event): void {
+  private addToCart(event: Event): void {
     // console.log(event);
     this.shopingCartNotification.innerHTML = localStorage.getItem('cartQuantity') || '0';
     let value = Number(this.shopingCartNotification.innerHTML);

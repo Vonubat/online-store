@@ -16,7 +16,7 @@ class Loader {
     return res;
   }
 
-  async load(): Promise<void | IGoods> {
+  protected async load(): Promise<void | IGoods> {
     try {
       const response: Response = await fetch(this.url);
       await this.errorHandler(response);

@@ -5,16 +5,16 @@ class Observer extends Executor {
     super();
   }
 
-  observeDOMContentLoaded(): void {
+  protected observeDOMContentLoaded(): void {
     document.addEventListener('DOMContentLoaded', this.executeAll.bind(this));
   }
 
-  observeSearch(): void {
+  protected observeSearch(): void {
     this.search.searchInput.addEventListener('click', this.executeAll.bind(this));
     this.search.searchInput.addEventListener('input', this.executeAll.bind(this));
   }
 
-  observeColor(): void {
+  protected observeColor(): void {
     this.color.blue.addEventListener('click', this.executeAll.bind(this));
     this.color.black.addEventListener('click', this.executeAll.bind(this));
     this.color.green.addEventListener('click', this.executeAll.bind(this));
@@ -23,14 +23,14 @@ class Observer extends Executor {
     this.color.gray.addEventListener('click', this.executeAll.bind(this));
   }
 
-  observeCamera(): void {
+  protected observeCamera(): void {
     this.camera.camera1.addEventListener('change', this.executeAll.bind(this));
     this.camera.camera2.addEventListener('change', this.executeAll.bind(this));
     this.camera.camera3.addEventListener('change', this.executeAll.bind(this));
     this.camera.camera4.addEventListener('change', this.executeAll.bind(this));
   }
 
-  observeBrand(): void {
+  protected observeBrand(): void {
     this.brand.apple.addEventListener('click', this.executeAll.bind(this));
     this.brand.google.addEventListener('click', this.executeAll.bind(this));
     this.brand.microsoft.addEventListener('click', this.executeAll.bind(this));
@@ -41,16 +41,16 @@ class Observer extends Executor {
     this.brand.oneplus.addEventListener('click', this.executeAll.bind(this));
   }
 
-  observePopular(): void {
+  protected observePopular(): void {
     this.popular.popular.addEventListener('click', this.executeAll.bind(this));
   }
 
-  observeLocalStorage(): void {
+  protected observeLocalStorage(): void {
     this.localStorage.resetLocalStorage.addEventListener('click', this.executeAll.bind(this));
     this.localStorage.resetFilters.addEventListener('click', this.executeAll.bind(this));
   }
 
-  observeSort(): void {
+  protected observeSort(): void {
     this.sort.nameAscent.addEventListener('click', this.executeAll.bind(this));
     this.sort.nameDescent.addEventListener('click', this.executeAll.bind(this));
     this.sort.yearAscent.addEventListener('click', this.executeAll.bind(this));
@@ -59,7 +59,7 @@ class Observer extends Executor {
     this.sort.quantityDescent.addEventListener('click', this.executeAll.bind(this));
   }
 
-  observeSliders(): void {
+  protected observeSliders(): void {
     this.sliders.quantitySlider.on('change', this.sliders.setter.bind(this.sliders));
     this.sliders.yearSlider.on('change', this.sliders.setter.bind(this.sliders));
     this.sliders.rangeFilter.addEventListener('mouseup', this.executeAll.bind(this));

@@ -1,14 +1,14 @@
 import { IGoodDeatails, TBrandValue, allBrands } from '../types/index';
 
 export class Brand {
-  apple: HTMLImageElement;
-  samsung: HTMLImageElement;
-  xiaomi: HTMLImageElement;
-  sony: HTMLImageElement;
-  microsoft: HTMLImageElement;
-  google: HTMLImageElement;
-  nothing: HTMLImageElement;
-  oneplus: HTMLImageElement;
+  public apple: HTMLImageElement;
+  public samsung: HTMLImageElement;
+  public xiaomi: HTMLImageElement;
+  public sony: HTMLImageElement;
+  public microsoft: HTMLImageElement;
+  public google: HTMLImageElement;
+  public nothing: HTMLImageElement;
+  public oneplus: HTMLImageElement;
   constructor() {
     this.apple = document.getElementById('apple') as HTMLImageElement;
     this.samsung = document.getElementById('samsung') as HTMLImageElement;
@@ -20,7 +20,7 @@ export class Brand {
     this.oneplus = document.getElementById('oneplus') as HTMLImageElement;
   }
 
-  brand(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public brand(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
 
     const brandStorage: TBrandValue[] = allBrands.filter((brand: TBrandValue): TBrandValue | undefined => {

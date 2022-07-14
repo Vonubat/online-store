@@ -1,12 +1,12 @@
 import { IGoodDeatails } from '../types/index';
 
 export class Popular {
-  popular: HTMLImageElement;
+  public popular: HTMLImageElement;
   constructor() {
     this.popular = document.getElementById('popular') as HTMLImageElement;
   }
 
-  favorites(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
+  public favorites(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
     // console.log(localStorage);
     if ((event.target as HTMLElement).id === 'popular') {
