@@ -97,11 +97,6 @@ class Generator {
       buttonBasket.setAttribute('type', `button`);
       buttonBasket.innerText = `Добавить в корзину `;
       divCardFooter.append(buttonBasket);
-
-      const spanBasketNotifications: HTMLSpanElement = document.createElement('span');
-      spanBasketNotifications.classList.add('badge', 'bg-success');
-      spanBasketNotifications.innerText = `0`;
-      buttonBasket.append(spanBasketNotifications);
     }
   }
 }

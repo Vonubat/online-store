@@ -24,6 +24,17 @@
       "slug": "xiaomi_poco_f3-10758"
     },
     {
+      "phone_name": "Pixel 4 XL",
+      "brand": "Google",
+      "year": 2013,
+      "color": "red",
+      "camera": 2,
+      "popular": true,
+      "quantity": 19,
+      "price": 399,
+      "slug": "google_pixel_4_xl-9895"
+    },
+    {
       "phone_name": "Xiaomi Poco X3 Pro",
       "brand": "Xiaomi",
       "year": 2015,
@@ -123,6 +134,17 @@
       "slug": "xiaomi_12s_ultra-11614"
     },
     {
+      "phone_name": "Xperia 5 III XQ-BQ72",
+      "brand": "Sony",
+      "year": 2005,
+      "color": "red",
+      "camera": 3,
+      "popular": false,
+      "quantity": 27,
+      "price": 650,
+      "slug": "sony_xperia_5-9840"
+    },
+    {
       "phone_name": "Xiaomi 12S Pro",
       "brand": "Xiaomi",
       "year": 2022,
@@ -178,6 +200,17 @@
       "slug": "samsung_galaxy_a53_5g-11268"
     },
     {
+      "phone_name": "Xperia XA2 Plus",
+      "brand": "Sony",
+      "year": 2016,
+      "color": "green",
+      "camera": 1,
+      "popular": true,
+      "quantity": 3,
+      "price": 240,
+      "slug": "sony_xperia_xa2_plus-9268"
+    },
+    {
       "phone_name": "Xiaomi 12S",
       "brand": "Xiaomi",
       "year": 2016,
@@ -187,6 +220,17 @@
       "quantity": 22,
       "price": 570,
       "slug": "xiaomi_12s-11645"
+    },
+    {
+      "phone_name": "iPhone XR",
+      "brand": "Apple",
+      "year": 2013,
+      "color": "blue",
+      "camera": 1,
+      "popular": true,
+      "quantity": 12,
+      "price": 241,
+      "slug": "apple_iphone_xr-9320"
     },
     {
       "phone_name": "Xiaomi Redmi Note 11",
@@ -220,6 +264,61 @@
       "quantity": 6,
       "price": 139,
       "slug": "samsung_galaxy_a13-11402"
+    },
+    {
+      "phone_name": "iPhone SE (2022)",
+      "brand": "Apple",
+      "year": 2022,
+      "color": "red",
+      "camera": 1,
+      "popular": false,
+      "quantity": 8,
+      "price": 367,
+      "slug": "apple_iphone_se_(2022)-11410"
+    },
+    {
+      "phone_name": "iPhone 13 mini",
+      "brand": "Apple",
+      "year": 2014,
+      "color": "white",
+      "camera": 2,
+      "popular": false,
+      "quantity": 10,
+      "price": 599,
+      "slug": "apple_iphone_13_mini-11104"
+    },
+    {
+      "phone_name": "Xperia XZ1 Compact",
+      "brand": "Sony",
+      "year": 2008,
+      "color": "black",
+      "camera": 1,
+      "popular": false,
+      "quantity": 14,
+      "price": 300,
+      "slug": "sony_xperia_xz1_compact-8610"
+    },
+    {
+      "phone_name": "Pixel 5a 5G",
+      "brand": "Google",
+      "year": 2013,
+      "color": "black",
+      "camera": 2,
+      "popular": false,
+      "quantity": 4,
+      "price": 362,
+      "slug": "google_pixel_5a_5g-11059"
+    },
+    {
+      "phone_name": "Lumia 950 XL",
+      "brand": "Microsoft",
+      "year": 2015,
+      "color": "white",
+      "camera": 1,
+      "popular": false,
+      "quantity": 13,
+      "price": 385,
+      "slug": "microsoft_lumia_950_xl-7263"
     }
   ]
 }
