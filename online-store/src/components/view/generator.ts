@@ -1,26 +1,22 @@
 import { IGoodDeatails } from '../types/index';
 
 class Generator {
-  modalWindow: HTMLDivElement;
-  modalTrigger: HTMLButtonElement;
-
-  constructor() {
-    this.modalWindow = document.getElementById('modal-window') as HTMLDivElement;
-    this.modalTrigger = document.getElementById('modal-trigger') as HTMLButtonElement;
-  }
-
   generate(data: IGoodDeatails[]): void {
     const goods: IGoodDeatails[] = data;
-    if (goods.length === 0) {
-      const event: Event = new Event('click');
-      this.modalTrigger.dispatchEvent(event);
-    }
+
     const sectionCardsContainer = document.getElementById('cards-container') as HTMLElement;
 
     if (sectionCardsContainer.childNodes.length > 0) {
       while (sectionCardsContainer.firstChild) {
         sectionCardsContainer.removeChild(sectionCardsContainer.firstChild);
       }
+    }
+
+    if (goods.length === 0) {
+      const divCard: HTMLDivElement = document.createElement('div');
+      divCard.innerHTML = 'Извините, совпадений не обнаружено';
+      divCard.classList.add('text-danger', 'display-6');
+      sectionCardsContainer.append(divCard);
     }
 
     for (let i = 0; i < goods.length; i++) {

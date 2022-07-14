@@ -28,15 +28,17 @@ html {
     }
   }
 
-  .star {
-    position: fixed;
-    cursor: pointer;
-    bottom: 75px;
-    right: 25px;
-    z-index: $zindex-modal;
-  }
-
   .controls {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+
+    .star {
+      height: 95px;
+      cursor: pointer;
+      z-index: $zindex-modal;
+    }
+
     .search {
       width: 200px;
     }
@@ -191,14 +193,14 @@ html {
 }
 
 .animation {
-  animation: rotate 2s linear infinite;
+  animation: rotate 1s ease-out infinite;
 }
 
 @keyframes rotate {
   0% {
-    transform: rotate(0);
+    transform: scale(105%);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(95%);
   }
 }

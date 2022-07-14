@@ -16,35 +16,38 @@
         <h1 class="h1">Online Store</h1>
         <img class="online-shopping" src="./assets/online-shopping.png" alt="online-shopping.png" />
       </div>
-      <a href="#" data-bs-toggle="custom-tooltip" title="Только популярные"
-        ><img id="popular" class="star" src="./assets/star.png" alt="star.png"
-      /></a>
+
       <div class="controls">
-        <button
-          class="btn btn-primary me-3"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvasWithBothOptions"
-          aria-controls="offcanvasWithBothOptions"
-        >
-          Фильтры
-        </button>
-        <button type="button" class="btn btn-primary position-relative">
-          Корзина
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 5 </span>
-        </button>
-        <div class="input-group search mb-3 mt-3">
-          <input
-            class="form-control"
-            type="search"
-            id="search-filter"
-            placeholder="Поиск"
-            aria-label="default input example"
-            autofocus
-          />
-          <button class="btn btn-primary disabled" type="button" id="button-addon1">
-            <img src="./assets/search.png" alt="" />
+        <a href="#" data-bs-toggle="custom-tooltip" title="Только популярные"
+          ><img id="popular" class="star" src="./assets/star.png" alt="star.png"
+        /></a>
+        <div class="btn-input-container">
+          <button
+            class="btn btn-primary me-3"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions"
+            aria-controls="offcanvasWithBothOptions"
+          >
+            Фильтры
           </button>
+          <button type="button" class="btn btn-primary position-relative">
+            Корзина
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 5 </span>
+          </button>
+          <div class="input-group search mb-3 mt-3">
+            <input
+              class="form-control"
+              type="search"
+              id="search-filter"
+              placeholder="Поиск"
+              aria-label="default input example"
+              autofocus
+            />
+            <button class="btn btn-primary disabled" type="button" id="button-addon1">
+              <img src="./assets/search.png" alt="" />
+            </button>
+          </div>
         </div>
 
         <div

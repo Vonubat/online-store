@@ -62,6 +62,7 @@ class Observer extends Executor {
     this.sliders.quantitySlider.on('change', this.sliders.setter.bind(this.sliders));
     this.sliders.yearSlider.on('change', this.sliders.setter.bind(this.sliders));
     this.sliders.rangeFilter.addEventListener('mouseup', this.executeAll.bind(this));
+    this.sliders.rangeFilter.addEventListener('mouseleave', this.executeAll.bind(this));
   }
 }
 
