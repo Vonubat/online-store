@@ -89,9 +89,10 @@ class Generator {
       divCard.append(divCardFooter);
 
       const buttonBasket: HTMLButtonElement = document.createElement('button');
-      buttonBasket.classList.add('btn', 'btn-primary');
+      buttonBasket.classList.add('btn', 'btn-primary', 'shoping-cart-add');
       buttonBasket.setAttribute('type', `button`);
-      buttonBasket.innerText = `Добавить в корзину `;
+      buttonBasket.innerText = `Добавить в корзину`;
+      buttonBasket.id = `${goods[i].slug}`;
       divCardFooter.append(buttonBasket);
     }
   }

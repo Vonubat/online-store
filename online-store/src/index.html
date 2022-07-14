@@ -31,9 +31,18 @@
           >
             Фильтры
           </button>
-          <button type="button" class="btn btn-primary position-relative">
+          <button
+            type="button"
+            class="btn btn-primary shoping-cart-btn position-relative no-hover"
+            id="shoping-cart-btn"
+          >
             Корзина
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 5 </span>
+            <span
+              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+              id="shoping-cart-notification"
+            >
+              0
+            </span>
           </button>
           <div class="input-group search mb-3 mt-3">
             <input
@@ -44,7 +53,7 @@
               aria-label="default input example"
               autofocus
             />
-            <button class="btn btn-primary disabled" type="button" id="button-addon1">
+            <button class="btn btn-primary no-hover" type="button" id="button-addon1">
               <img src="./assets/search.png" alt="" />
             </button>
           </div>
@@ -142,8 +151,6 @@
       </div>
     </header>
 
-    <section class="cards-container container" id="cards-container"></section>
-
     <!-- Button trigger modal -->
     <button
       type="button"
@@ -161,10 +168,12 @@
             <h5 class="modal-title" id="modal-windowLabel">Информационное сообщение</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body">Извините, совпадений не обнаружено</div>
+          <div class="modal-body">Извините, все слоты заполнены (попытка добавить в корзину более 20 товаров)</div>
         </div>
       </div>
     </div>
+
+    <section class="cards-container container" id="cards-container"></section>
 
     <footer class="footer container-fluid mt-3">
       <div class="logo">

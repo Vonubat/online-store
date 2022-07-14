@@ -32,6 +32,7 @@ html {
     display: flex;
     justify-content: space-between;
     width: 320px;
+    margin-right: 10px;
 
     .star {
       height: 95px;
@@ -194,6 +195,10 @@ html {
 
 .animation {
   animation: rotate 1s ease-out infinite;
+}
+
+.no-hover {
+  pointer-events: none;
 }
 
 @keyframes rotate {

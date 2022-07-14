@@ -10,6 +10,7 @@ import Popular from '../utilities/popular-filter';
 import Sort from '../utilities/sort';
 import Sliders from '../utilities/sliders';
 import LocalStorage from '../utilities/local-storage';
+import ShoppingCart from '../utilities/shopping-cart';
 
 class Executor {
   generator: Generator;
@@ -22,6 +23,7 @@ class Executor {
   sort: Sort;
   sliders: Sliders;
   localStorage: LocalStorage;
+  shoppingCart: ShoppingCart;
 
   constructor() {
     this.generator = new Generator();
@@ -34,11 +36,12 @@ class Executor {
     this.sort = new Sort();
     this.sliders = new Sliders();
     this.localStorage = new LocalStorage();
+    this.shoppingCart = new ShoppingCart();
   }
 
   async executeAll(event: Event): Promise<void> {
     let filteredData: Promise<IGoodDeatails[]>;
-    console.log(event);
+    // console.log(event);
 
     filteredData = this.executeSort(event, await this.executeLoad());
     filteredData = this.executeSearch(event, await filteredData);
@@ -47,12 +50,10 @@ class Executor {
     filteredData = this.executeColor(event, await filteredData);
     filteredData = this.executePopular(event, await filteredData);
     filteredData = this.executeSlides(event, await filteredData);
-    this.executeLocalStorage(event, await filteredData);
-    this.executeGenerate(await filteredData); // for test
-  }
 
-  executeGenerate(data: IGoodDeatails[]): void {
-    this.generator.generate(data);
+    this.executeGenerate(await filteredData);
+    this.executeShoppingCart(event);
+    this.executeLocalStorage(event, await filteredData);
   }
 
   async executeLoad(): Promise<IGoodDeatails[]> {
@@ -91,6 +92,14 @@ class Executor {
   executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
     this.localStorage.save(data);
     this.localStorage.reset(event);
+  }
+
+  executeGenerate(data: IGoodDeatails[]): void {
+    this.generator.generate(data);
+  }
+
+  executeShoppingCart(event: Event): void {
+    this.shoppingCart.updateActualGoods(event);
   }
 }
 
