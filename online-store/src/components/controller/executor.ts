@@ -13,35 +13,35 @@ import LocalStorage from '../utilities/local-storage';
 import ShoppingCart from '../utilities/shopping-cart';
 
 class Executor extends Loader {
-  protected generator: Generator;
-  protected search: Search;
-  protected color: Color;
-  protected camera: Camera;
-  protected brand: Brand;
-  protected popular: Popular;
   protected sort: Sort;
+  protected search: Search;
+  protected brand: Brand;
+  protected camera: Camera;
+  protected color: Color;
+  protected popular: Popular;
   protected sliders: Sliders;
-  protected localStorage: LocalStorage;
+  protected generator: Generator;
   protected shoppingCart: ShoppingCart;
+  protected localStorage: LocalStorage;
 
   constructor() {
     super();
-    this.generator = new Generator();
-    this.search = new Search();
-    this.color = new Color();
-    this.camera = new Camera();
-    this.brand = new Brand();
-    this.popular = new Popular();
     this.sort = new Sort();
+    this.search = new Search();
+    this.brand = new Brand();
+    this.camera = new Camera();
+    this.color = new Color();
+    this.popular = new Popular();
     this.sliders = new Sliders();
-    this.localStorage = new LocalStorage();
+    this.generator = new Generator();
     this.shoppingCart = new ShoppingCart();
+    this.localStorage = new LocalStorage();
   }
 
   protected async executeAll(event: Event): Promise<void> {
     let filteredData: Promise<IGoodDeatails[]>;
-    // console.log(event);
 
+    // execute sort & filters
     filteredData = this.executeSort(event, await this.executeLoad());
     filteredData = this.executeSearch(event, await filteredData);
     filteredData = this.executeBrand(event, await filteredData);
@@ -50,6 +50,7 @@ class Executor extends Loader {
     filteredData = this.executePopular(event, await filteredData);
     filteredData = this.executeSlides(event, await filteredData);
 
+    // execute DOM-generator +  implement Shopping Cart + reset localStorage & filters
     this.executeGenerate(await filteredData);
     this.executeShoppingCart(event);
     this.executeLocalStorage(event, await filteredData);
@@ -60,38 +61,32 @@ class Executor extends Loader {
     return goods.data;
   }
 
+  protected async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    return this.sort.sort(event, data);
+  }
+
   protected async executeSearch(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.search.search(event, data);
-  }
-
-  protected async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    return this.color.color(event, data);
-  }
-
-  protected async executeCamera(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    return this.camera.camera(event, data);
   }
 
   protected async executeBrand(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.brand.brand(event, data);
   }
 
+  protected async executeCamera(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    return this.camera.camera(event, data);
+  }
+
+  protected async executeColor(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
+    return this.color.color(event, data);
+  }
+
   protected async executePopular(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.popular.favorites(event, data);
   }
 
-  protected async executeSort(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
-    return this.sort.sort(event, data);
-  }
-
   protected async executeSlides(event: Event, data: IGoodDeatails[]): Promise<IGoodDeatails[]> {
     return this.sliders.filter(event, data);
-  }
-
-  protected executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
-    this.localStorage.save(data);
-    this.localStorage.resetHard(event);
-    this.localStorage.resetSoft(event);
   }
 
   protected executeGenerate(data: IGoodDeatails[]): void {
@@ -100,6 +95,12 @@ class Executor extends Loader {
 
   protected executeShoppingCart(event: Event): void {
     this.shoppingCart.updateActualGoods(event);
+  }
+
+  protected executeLocalStorage(event: Event, data: IGoodDeatails[]): void {
+    this.localStorage.save(data);
+    this.localStorage.resetHard(event);
+    this.localStorage.resetSoft(event);
   }
 }
 

@@ -8,6 +8,7 @@ export class Sliders {
   public rangeFilter: HTMLDivElement;
 
   constructor() {
+    // special function which describing slider format
     this.formatForSlider = {
       from: function (formattedValue: string): number {
         return Number(formattedValue);
@@ -16,7 +17,7 @@ export class Sliders {
         return Math.round(numericValue);
       },
     };
-
+    // create the quantity slider-filter
     this.quantitySlider = noUiSlider.create(document.getElementById('slider-quantity') as noUiSlider.target, {
       start: [1, 30],
       connect: true,
@@ -32,7 +33,7 @@ export class Sliders {
         },
       },
     });
-
+    // create the year slider-filter
     this.yearSlider = noUiSlider.create(document.getElementById('slider-year') as noUiSlider.target, {
       start: [2002, 2022],
       connect: true,
@@ -49,18 +50,10 @@ export class Sliders {
       },
     });
 
-    this.formatForSlider = {
-      from: function (formattedValue: string): number {
-        return Number(formattedValue);
-      },
-      to: function (numericValue: number): number {
-        return Math.round(numericValue);
-      },
-    };
-
     this.rangeFilter = document.getElementById('range-filter') as HTMLDivElement;
   }
 
+  // set actual values from the sliders to localStorage
   public setter(): void {
     const quantityValues: number[] = this.quantitySlider.get() as number[];
     const yearValues: number[] = this.yearSlider.get() as number[];
@@ -70,12 +63,14 @@ export class Sliders {
     localStorage.setItem('yearEnd', `${yearValues[1]}`);
   }
 
+  // (year & quantity)-filters implementation
   public filter(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     const quantityStart: string = localStorage.getItem('quantityStart') || '';
     const quantityEnd: string = localStorage.getItem('quantityEnd') || '';
     const yearStart: string = localStorage.getItem('yearStart') || '';
     const yearEnd: string = localStorage.getItem('yearEnd') || '';
 
+    // if flags exist -> set filters & and filter goods
     if (quantityStart && quantityEnd && yearStart && yearEnd) {
       this.quantitySlider.set([+quantityStart, +quantityEnd]);
       this.yearSlider.set([+yearStart, +yearEnd]);
@@ -92,6 +87,7 @@ export class Sliders {
         return;
       });
     } else {
+      // if flags don't exist -> reset filters in default statement
       if (event.type === 'DOMContentLoaded') {
         this.quantitySlider.reset();
         this.yearSlider.reset();

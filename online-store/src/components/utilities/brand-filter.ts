@@ -22,7 +22,7 @@ export class Brand {
 
   public brand(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
-
+    // check on selected and saved brands from user
     const brandStorage: TBrandValue[] = allBrands.filter((brand: TBrandValue): TBrandValue | undefined => {
       if (brand.toLocaleLowerCase() === (event.target as HTMLInputElement).id) {
         if (localStorage.getItem(brand)) {
@@ -36,6 +36,7 @@ export class Brand {
       } else return;
     });
 
+    // filter goods according to selected and saved brands from user
     if (brandStorage.length === 0) {
       tempData = data;
     } else {

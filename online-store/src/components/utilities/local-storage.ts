@@ -16,10 +16,12 @@ export class LocalStorage {
     this.resetFilters = document.getElementById('reset-filters') as HTMLButtonElement;
   }
 
+  // save all-filtered data (for debugging)
   public save(data: IGoodDeatails[]): void {
     localStorage.setItem('data', `${JSON.stringify(data)}`);
   }
 
+  // clear localStorage
   public resetHard(event: Event): void {
     if ((event.target as HTMLElement).id === 'reset-local-storage') {
       localStorage.clear();
@@ -27,6 +29,7 @@ export class LocalStorage {
     }
   }
 
+  // clear flags in localStorage related with filters
   public resetSoft(event: Event): void {
     if ((event.target as HTMLElement).id === 'reset-filters') {
       for (const key in localStorage) {

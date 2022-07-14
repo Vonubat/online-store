@@ -9,6 +9,7 @@ export class ShoppingCart {
     this.modalTrigger = document.getElementById('modal-trigger') as HTMLButtonElement;
   }
 
+  // get actual goods after DOM-genetation -> set listeners
   public updateActualGoods(event: Event): void {
     this.shopingCartAdd = document.querySelectorAll('.shoping-cart-add') as NodeListOf<Element>;
     for (const good of this.shopingCartAdd) {
@@ -17,11 +18,13 @@ export class ShoppingCart {
     }
   }
 
+  // shopping cart engine
   private addToCart(event: Event): void {
-    // console.log(event);
+    // get saved quantity of goods in the shopping cart (either 0)
     this.shopingCartNotification.innerHTML = localStorage.getItem('cartQuantity') || '0';
     let value = Number(this.shopingCartNotification.innerHTML);
 
+    // find out goods which were in the shopping cart
     if (event.type === 'DOMContentLoaded' || !(event.target as HTMLElement).classList.contains('shoping-cart-add')) {
       for (const key in localStorage) {
         if (!localStorage.hasOwnProperty(key)) {
@@ -41,13 +44,16 @@ export class ShoppingCart {
       return;
     }
 
+    // after event
     if ((event.target as HTMLElement).classList.contains('shoping-cart-add')) {
+      // check restrictions (<= 20 goods in the shopping cart)
       if (value === 20 && (event.target as HTMLElement).innerHTML !== 'В корзине!') {
         const event = new Event('click');
         this.modalTrigger.dispatchEvent(event);
         return;
       }
 
+      // change styles and text
       (event.target as HTMLElement).classList.toggle('btn-primary');
       (event.target as HTMLElement).classList.toggle('btn-success');
 
@@ -61,6 +67,7 @@ export class ShoppingCart {
         return;
       }
 
+      // save quantity & goods in localStorage
       this.shopingCartNotification.innerHTML = String(++value);
       localStorage.setItem('cartQuantity', `${value}`);
       localStorage.setItem(`cartGood-${(event.target as HTMLElement).id}`, `${(event.target as HTMLElement).id}`);

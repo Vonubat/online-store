@@ -8,7 +8,7 @@ export class Popular {
 
   public favorites(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
-    // console.log(localStorage);
+    // implementation, when was dispatched target event
     if ((event.target as HTMLElement).id === 'popular') {
       if (localStorage.getItem('popular')) {
         localStorage.removeItem('popular');
@@ -24,6 +24,7 @@ export class Popular {
         });
       }
     } else {
+      //implementation, when was dispatched non-target event
       if (localStorage.getItem('popular')) {
         tempData = data.filter((item: IGoodDeatails): IGoodDeatails | undefined => {
           if (item.popular === true) {

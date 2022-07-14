@@ -19,13 +19,14 @@ export class Sort {
 
   public sort(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let id: string = (event.target as HTMLElement).id;
-    // console.log(localStorage);
 
+    // check localStorage on page loading and implement saved sort
     if (event.type === 'DOMContentLoaded') {
       id = localStorage.getItem('sort') || '';
       return this.sortEngine(id, data);
     }
 
+    // implement sort after event
     if (allSorts.some((item: TSortValue): boolean => item === id)) {
       return this.sortEngine(id, data);
     } else {
@@ -34,6 +35,7 @@ export class Sort {
     }
   }
 
+  // implementation of sorting and save flag in localStorage
   sortEngine(id: string, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
     switch (id) {

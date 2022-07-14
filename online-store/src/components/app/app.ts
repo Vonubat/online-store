@@ -5,6 +5,7 @@ export class App extends Observer {
     super();
   }
 
+  // implement entry-point method to app
   public start(): void {
     this.observeDOMContentLoaded();
     this.observeSearch();

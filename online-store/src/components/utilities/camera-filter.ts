@@ -15,7 +15,7 @@ export class Camera {
 
   public camera(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
-
+    // check on selected and saved quantity of cameras from user
     const cameraStorage: TCameraValue[] = allCameras.filter((quantity: TCameraValue): TCameraValue | undefined => {
       if (`camera${quantity}` === (event.target as HTMLInputElement).id) {
         if (localStorage.getItem(`camera${quantity}`)) {
@@ -29,6 +29,7 @@ export class Camera {
       } else return;
     });
 
+    // filter goods according to selected and saved quantity of cameras from user
     if (cameraStorage.length === 0) {
       tempData = data;
     } else {

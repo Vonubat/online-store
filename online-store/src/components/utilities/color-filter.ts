@@ -18,7 +18,7 @@ export class Color {
 
   public color(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let tempData: IGoodDeatails[] = data;
-
+    // check on selected and saved colors from user
     const colorStorage: TColorValue[] = allColors.filter((color: TColorValue): TColorValue | undefined => {
       if (color === (event.target as HTMLInputElement).id) {
         if (localStorage.getItem(color)) {
@@ -32,6 +32,7 @@ export class Color {
       } else return;
     });
 
+    // filter goods according to selected and saved colors from user
     if (colorStorage.length === 0) {
       tempData = data;
     } else {

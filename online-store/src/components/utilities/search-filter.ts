@@ -9,9 +9,10 @@ export class Search {
   public search(event: Event, data: IGoodDeatails[]): IGoodDeatails[] {
     let inputValue: string;
 
+    // check on saved search value and set the search value
     if (
       typeof (event.target as HTMLInputElement).value === 'undefined' ||
-      (event.target as HTMLInputElement).value === 'cameraEvent'
+      (event.target as HTMLInputElement).value === 'cameraEvent' // exclude camera-filter event
     ) {
       inputValue = localStorage.getItem('search') || '';
     } else {
@@ -26,6 +27,7 @@ export class Search {
     localStorage.setItem('search', `${inputValue}`);
     this.searchInput.value = inputValue;
 
+    // filter goods according to search value
     return data.filter((item: IGoodDeatails): IGoodDeatails | undefined => {
       const ItemValue: string = item.phone_name.toLowerCase();
       const searchValue = new RegExp(`${inputValue.toLowerCase()}`);
