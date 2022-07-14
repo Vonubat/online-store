@@ -9,12 +9,14 @@ html {
 }
 
 .header {
+  position: fixed;
   height: 150px;
   background-color: $light;
   border-radius: 0px 0px 30px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
 
   .logo {
     display: flex;
@@ -137,6 +139,8 @@ html {
 }
 
 .cards-container {
+  position: relative;
+  top: 150px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -194,14 +198,24 @@ html {
 }
 
 .animation {
-  animation: rotate 1s ease-out infinite;
+  animation: beat 1s ease-out infinite;
 }
 
 .no-hover {
   pointer-events: none;
 }
 
-@keyframes rotate {
+.size-s {
+  transform: scale(50%);
+}
+.size-m {
+  transform: scale(75%);
+}
+.size-xl {
+  transform: scale(100%);
+}
+
+@keyframes beat {
   0% {
     transform: scale(105%);
   }
