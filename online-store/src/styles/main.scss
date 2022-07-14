@@ -142,6 +142,7 @@ html {
 .cards-container {
   position: relative;
   top: 150px;
+  margin-bottom: 150px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -169,7 +170,7 @@ html {
 
 .footer {
   position: relative;
-  top: 200px;
+  bottom: 0px;
   height: 75px;
   background-color: $gray-800;
   display: flex;
