@@ -11,13 +11,17 @@ html {
 .header {
   position: fixed;
   top: 0px;
-  height: 150px;
+  min-height: 150px;
   background-color: $light;
   border-radius: 0px 0px 30px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
+
+  @media (max-width: 680px) {
+    justify-content: center;
+  }
 
   .logo {
     display: flex;
@@ -147,6 +151,11 @@ html {
   flex-wrap: wrap;
   justify-content: space-evenly;
 
+  @media (max-width: 680px) {
+    top: 238px;
+    margin-bottom: 250px;
+  }
+
   .card {
     background-color: $light;
     width: 300px;
@@ -171,11 +180,15 @@ html {
 .footer {
   position: relative;
   bottom: 0px;
-  height: 75px;
+  min-height: 75px;
   background-color: $gray-800;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 470px) {
+    justify-content: center;
+  }
 
   .logo {
     .rs-school-logo {

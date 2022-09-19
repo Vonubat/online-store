@@ -21,7 +21,7 @@ class Generator {
 
     for (let i = 0; i < goods.length; i++) {
       const divCard: HTMLDivElement = document.createElement('div');
-      divCard.classList.add('card', 'me-3', 'mt-3', 'mb-3');
+      divCard.classList.add('card', 'mt-3', 'mb-3');
 
       sectionCardsContainer.append(divCard);
 
